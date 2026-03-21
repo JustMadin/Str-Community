@@ -58,7 +58,7 @@
         }
 
         .section {
-            background: #161a23; /* خلفية ثابتة بدون Blur لزيادة السرعة */
+            background: #161a23;
             border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 30px;
@@ -138,13 +138,16 @@
             border: 1px solid var(--text-gold); display: inline-block;
         }
 
+        .rules-list { list-style: none; padding: 0; }
         .rules-list li { 
-            padding: 10px 0; border-bottom: 1px solid rgba(241, 196, 15, 0.05); 
+            padding: 12px 0; border-bottom: 1px solid rgba(241, 196, 15, 0.05); 
+            font-size: 1.05rem;
         }
+        .rules-list li::before { content: "✦ "; color: var(--accent-glow); }
 
         .note-box {
             background: rgba(241, 196, 15, 0.05); border-right: 4px solid var(--text-gold);
-            padding: 15px; margin-top: 20px; border-radius: 5px;
+            padding: 15px; margin-top: 20px; border-radius: 5px; font-weight: bold;
         }
 
         @media (max-width: 768px) {
@@ -168,19 +171,19 @@
             <div class="grid">
                 <div class="card">
                     <img src="https://cdn.discordapp.com/avatars/944053364323405914/73bc30883d61ed7bc6a000b9c3ca375d.webp?size=128" class="admin-img" alt="Sanji">
-                    <h3>Sanji</h3>
+                    <h3>SANJI</h3>
                     <span class="badge">Owner Ship</span>
                     <br><a href="https://discord.com/users/944053364323405914" target="_blank" class="btn-link">View Profile</a>
                 </div>
                 <div class="card">
                     <img src="https://cdn.discordapp.com/avatars/1134505693861388338/f4a8d73d777cc5e1faf21d912a23efe0.webp?size=128" class="admin-img" alt="Baki">
-                    <h3>Baki</h3>
+                    <h3>BAKI</h3>
                     <span class="badge">Owner</span>
                     <br><a href="https://discord.com/users/1134505693861388338" target="_blank" class="btn-link">View Profile</a>
                 </div>
                 <div class="card">
                     <img src="https://cdn.discordapp.com/avatars/1190396076222587002/faadabf1a6b0a9dfc7b1dd55ca55b0c9.webp?size=128" class="admin-img" alt="Mustafa">
-                    <h3>MUustafa</h3>
+                    <h3>MUSTAFA</h3>
                     <span class="badge">CO OWNER</span>
                     <br><a href="https://discord.com/users/1190396076222587002" target="_blank" class="btn-link">View Profile</a>
                 </div>
@@ -200,20 +203,29 @@
         </div>
 
         <div class="section">
-            <h2>📜 قوانين السيرفر</h2>
-            <ul style="list-style: none;">
-                <li>¹- يـجـب إحـتـرام الأعـضـاء / الإدارة</li>
-                <li>²- مـمـنـوع الـسـب و الـشـتـم بـكـل أنـواعـه</li>
-                <li>³- عـدم الـتـحـدث عـن الـسـيـاسـة أو الـعـنـصـريـة</li>
-                <li>...</li>
+            <h2>📜 قوانين السيرفر الأساسية</h2>
+            <ul class="rules-list">
+                <li>¹- يـجـب إحـتـرام الأعـضـاء / الإدارة و عـدم الإسـاءة لـهـم</li>
+                <li>²- الـسـب و الـشـتـم بـكـل أنـواعـه و سـبـام كـلام وراء بـعـض</li>
+                <li>³- عـدم الـتـحـدث عـن ( الـسـيـاسـة / الـطـوائـف / الـعـنـصـريـة ) قـد يـعـرضـك لـ الـطـرد</li>
+                <li>⁴- مـمـنـوع الـتـبـادل أو الـطـلـبـات مـثـل (رتـبة / كـريـدت / سـيـرفـرات )</li>
+                <li>⁵- عـدم ذكـر أسـمـاء سـيـرفـرات حـتـى لـو كـان سـيـرفـر لـ يـوتـيـوبـر مـشـهـور</li>
+                <li>⁶- عـدم إسـتـخـدام أوامـر الـبـوتـات او كـلام الا بـالـشـات مـخـصـص لـهـا</li>
+                <li>⁷- عـدم الـتـلـمـيـح بـالـسـب و بـعـض الأيـمـوجـيـات و الـتـغـازل بـكـل أنـواعـه</li>
+                <li>⁸- عـدم إرسـال روابـط سـيـرفـرات فـي سـيـرفـرنـا أو بـالـخـاص الأعـضـاء بـانـد فـوري</li>
+                <li>⁹- عـدم الـتـدخـل بـشـؤون الادارة و عـدم إزعـاجـهـم بـالـمـنـشـن الـكـثـيـر</li>
+                <li>¹⁰- مـشـاكـل الـخـاص لـيـس لـديـنـا أي عـلاقـة فـيـهـا إلا اذا كـان نـشـر سـيـرفـرات</li>
             </ul>
-            <div class="note-box">يرجى قراءة القوانين كاملة في الديسكورد لتجنب العقوبات.</div>
+            <div class="note-box">
+                مـلاحـظـة : عـدم قـراءة قـوانـيـن الـسـيـرفـر لـيـس عـذر يـرجـى قـرائـتـهـا لـ تـجـنـب الـبـانـد.
+            </div>
         </div>
 
-        <div class="section footer-thanks" style="text-align: center; border-top: 2px solid var(--text-gold);">
-            <h2 style="border: none; margin-bottom: 5px;">شكراً لكم 💛</h2>
-            <p style="font-weight: bold;">معكم طاقم إدارة STR COMMUNITY</p>
+        <div class="section" style="text-align: center; border-top: 2px solid var(--text-gold);">
+            <h2 style="border: none; margin-bottom: 10px;">شكراً لكم 💛</h2>
+            <p style="font-weight: bold; font-size: 1.2rem;">معكم طاقم إدارة <span style="color: var(--text-gold);">STR COMMUNITY</span></p>
         </div>
+
     </div>
 </body>
 </html>
