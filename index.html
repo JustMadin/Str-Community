@@ -5,99 +5,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>STR Community</title>
 <style>
-* {margin:0; padding:0; box-sizing:border-box;}
-body {
-    font-family: 'Arial', sans-serif;
-    background: #0b0e1a; /* خلفية داكنة ثابتة مثل الصور */
-    color: #fff;
-    overflow-x: hidden;
+:root{
+  --bg:#0b0e1a;
+  --card:#161a23;
+  --border:#23283b;
+  --text:#e6e6eb;
+  --muted:#9aa0b3;
+  --main:#ff3232;
+  --accent:#00d4ff;
+  --gold:#f1c40f;
 }
 
-/* Sections */
-section {padding: 60px 20px; min-height: 100vh;}
-.container {max-width: 1100px; margin:auto;}
-.center {text-align:center;}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+.container{max-width:1100px; margin:auto; padding:30px 20px;}
+.center{text-align:center;}
 
-/* Logo */
-img.logo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    float:left;
-    margin-left:20px;
-    border:3px solid #ff3232;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-img.logo:hover {
-    transform: scale(1.05) rotate(8deg);
-    box-shadow: 0 15px 35px rgba(255,50,50,0.4);
-}
+h1{text-align:center; color:var(--main); margin-bottom:10px;}
+.subtitle{text-align:center; color:var(--muted); margin-bottom:40px;}
+h2{color:var(--main); margin-bottom:20px; border-bottom:1px solid var(--border); padding-bottom:8px;}
 
-/* Server Icon بجانب الاسم */
-.server-icon {
-    width: 60px;
-    height: 60px;
-    vertical-align: middle;
-    margin-left: 15px;
-    border-radius: 50%;
-    border:2px solid #ff3232;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.server-icon:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(255,50,50,0.4);
+.section{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px;
+  margin-bottom:30px;
 }
 
-/* Headings */
-h1 {font-size:50px; color:#ff3232; letter-spacing:2px; margin:20px 0;}
-h2 {font-size:32px; color:#ff3232; margin:20px 0;}
-
-/* Paragraphs */
-p {line-height:1.8; color:#cbd5e1; font-size:17px;}
-
-/* Boxes مودرن مسطح */
-.box {
-    background: #1a1d2e; /* مسطح مثل الصور */
-    border-radius: 20px;
-    padding: 25px 30px;
-    margin-top: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.box{
+  background:#11141c;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:15px;
+  margin-top:15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(255,50,50,0.3);
+.box:hover{
+  transform: translateY(-5px);
+  box-shadow:0 10px 25px rgba(255,50,50,0.3);
 }
 
-/* Links */
-a {
-    color:#ff3232;
-    text-decoration:none;
-    display:block;
-    margin:10px 0;
-    font-weight:bold;
-    transition: all 0.3s ease;
+img.logo{
+  width:150px; height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  float:left;
+  margin-left:20px;
+  border:3px solid var(--main);
+  box-shadow:0 5px 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-a:hover {color:#ff5959; transform: scale(1.05);}
-
-/* Admin Images */
-.admin-img {
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    margin-top:10px;
-    border:2px solid #ff3232;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+img.logo:hover{
+  transform: scale(1.05) rotate(8deg);
+  box-shadow:0 15px 35px rgba(255,50,50,0.4);
 }
-.admin-img:hover {transform: scale(1.2);}
 
-/* Rules */
-.rules p {margin:10px 0; font-size:16px;}
-.rules p::before {content:'•'; margin-left:10px; color:#ff3232;}
+.server-icon{
+  width:60px; height:60px;
+  vertical-align:middle;
+  margin-left:15px;
+  border-radius:50%;
+  border:2px solid var(--main);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.server-icon:hover{
+  transform: scale(1.1);
+  box-shadow:0 10px 25px rgba(255,50,50,0.4);
+}
 
-/* Clear floats */
-.clearfix::after {content: ""; clear: both; display: table;}
+a{color:var(--main); text-decoration:none; display:block; margin:10px 0; font-weight:bold; transition:all 0.3s ease;}
+a:hover{color:#ff5959; transform:scale(1.05);}
+
+.admin-img{width:60px; height:60px; border-radius:50%; margin-top:10px; border:2px solid var(--main); transition: transform 0.3s ease;}
+.admin-img:hover{transform: scale(1.2);}
+
+.rules p{margin:10px 0; font-size:16px;}
+.rules p::before{content:'•'; margin-left:10px; color:var(--main);}
+
+.clearfix::after{content:""; clear:both; display:table;}
+
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:15px;}
+.card{background:#11141c; border:1px solid var(--border); border-radius:12px; padding:15px;}
+.card h3{margin:0 0 8px; color:var(--main);}
+.price{color:var(--gold); font-weight:bold;}
+.badge{background:#1e2440; color:#cfd2ff; padding:3px 8px; border-radius:6px; font-size:12px;}
+.rare{background:#3a2f00; color:#f1c40f;}
 </style>
 </head>
 <body>
@@ -106,10 +105,7 @@ a:hover {color:#ff5959; transform: scale(1.05);}
 <div class="container clearfix">
 <img src="27cb0faccfbafe63dd4ea954dcc80513.webp" class="logo">
 <div class="center">
-<h1>
-𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬
-<img src="https://cdn.discordapp.com/icons/1331682748372488243/27cb0faccfbafe63dd4ea954dcc80513.webp?size=1024" class="server-icon">
-</h1>
+<h1>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬 <img src="https://cdn.discordapp.com/icons/1331682748372488243/27cb0faccfbafe63dd4ea954dcc80513.webp?size=1024" class="server-icon"></h1>
 <p>
 سيرفر ستار هو سيرفر ديسكرود تتوفر فيه جميع وسائل الترفيه حيث تمنح لك فرصة لتعرف و تكوين صداقات من بلدان مختلفة وان تعيش معنا تجارب و قصص رائعة.
 <br><br>
@@ -122,30 +118,30 @@ a:hover {color:#ff5959; transform: scale(1.05);}
 <section>
 <div class="container center">
 <h2>Management 👑</h2>
-<div class="box">
-<p>
-<a href="https://discord.com/users/944053364323405914" target="_blank">Owner Ship : SANJI</a><br>
+<div class="grid">
+<div class="card">
+<a href="https://discord.com/users/944053364323405914" target="_blank">Owner Ship : SANJI</a>
 <img src="https://cdn.discordapp.com/avatars/944053364323405914/73bc30883d61ed7bc6a000b9c3ca375d.webp?size=1024" class="admin-img">
-</p>
-<p>
-<a href="https://discord.com/users/1134505693861388338" target="_blank">Owner : BAKI</a><br>
+</div>
+<div class="card">
+<a href="https://discord.com/users/1134505693861388338" target="_blank">Owner : BAKI</a>
 <img src="https://cdn.discordapp.com/avatars/1134505693861388338/f4a8d73d777cc5e1faf21d912a23efe0.webp?size=1024" class="admin-img">
-</p>
-<p>
-<a href="https://discord.com/users/1190396076222587002" target="_blank">CO OWNER : MUSTAFA</a><br>
+</div>
+<div class="card">
+<a href="https://discord.com/users/1190396076222587002" target="_blank">CO OWNER : MUSTAFA</a>
 <img src="https://cdn.discordapp.com/avatars/1190396076222587002/faadabf1a6b0a9dfc7b1dd55ca55b0c9.webp?size=1024" class="admin-img">
-</p>
-<p>
-<a href="https://discord.com/users/1301649715577749556" target="_blank">CO OWNER : MAJED</a><br>
+</div>
+<div class="card">
+<a href="https://discord.com/users/1301649715577749556" target="_blank">CO OWNER : MAJED</a>
 <img src="https://cdn.discordapp.com/avatars/1301649715577749556/531ca8e0c8b77f92dcd077ebcc6807e8.webp?size=1024" class="admin-img">
-</p>
+</div>
 </div>
 </div>
 </section>
 
 <section>
 <div class="container center">
-<div class="box">
+<div class="card">
 <h2>Links Of Social 🌐</h2>
 <a href="https://discord.gg/str7" target="_blank">Discord</a>
 <a href="https://www.tiktok.com/@l3ei_7" target="_blank">TikTok</a>
@@ -172,14 +168,14 @@ a:hover {color:#ff5959; transform: scale(1.05);}
 <section>
 <div class="container center">
 <h2>خريطة السيرفر 🗺️</h2>
-<div class="box">
-<a href="https://discord.com/channels/1331682748372488243/1331959881648967822">اخبار السيرفر</a>
-<a href="https://discord.com/channels/1331682748372488243/1331959147649826898">القوانين</a>
-<a href="https://discord.com/channels/1331682748372488243/1416180157051572314">الشات العام</a>
-<a href="https://discord.com/channels/1331682748372488243/1416213834359767182">اختر رتبك</a>
-<a href="https://discord.com/channels/1331682748372488243/1416213530037846128">الدعم الفني</a>
-<a href="https://discord.com/channels/1331682748372488243/1416214568291799163">الفعاليات</a>
-<a href="https://discord.com/channels/1331682748372488243/1416217109696086137">اخبار ماين كرافت</a>
+<div class="grid">
+<a href="https://discord.com/channels/1331682748372488243/1331959881648967822" class="card">اخبار السيرفر</a>
+<a href="https://discord.com/channels/1331682748372488243/1331959147649826898" class="card">القوانين</a>
+<a href="https://discord.com/channels/1331682748372488243/1416180157051572314" class="card">الشات العام</a>
+<a href="https://discord.com/channels/1331682748372488243/1416213834359767182" class="card">اختر رتبك</a>
+<a href="https://discord.com/channels/1331682748372488243/1416213530037846128" class="card">الدعم الفني</a>
+<a href="https://discord.com/channels/1331682748372488243/1416214568291799163" class="card">الفعاليات</a>
+<a href="https://discord.com/channels/1331682748372488243/1416217109696086137" class="card">اخبار ماين كرافت</a>
 </div>
 </div>
 </section>
