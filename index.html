@@ -9,15 +9,15 @@
 * {margin:0;padding:0;box-sizing:border-box;}
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(-45deg, #0d1117, #1a1f2b, #111827, #161b2e);
+    background: linear-gradient(135deg, #0f172a, #1c223a, #111827, #1a1f2b);
     background-size: 400% 400%;
     color: #fff;
-    animation: gradientBG 20s ease infinite;
+    animation: moveBG 25s ease infinite;
     overflow-x: hidden;
 }
 
-/* Gradient Animation */
-@keyframes gradientBG {
+/* Animated Gradient */
+@keyframes moveBG {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
@@ -37,8 +37,8 @@ section {
 /* Fade-in Scroll */
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
 }
 .fade-in.visible {
     opacity: 1;
@@ -54,7 +54,7 @@ img.logo {
     float: left;
     margin-left: 20px;
     border: 3px solid #ff3232;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
     transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 img.logo:hover {
@@ -62,7 +62,7 @@ img.logo:hover {
     box-shadow: 0 25px 50px rgba(255,50,50,0.7);
 }
 
-/* Server Icon بجانب الاسم */
+/* Server Icon */
 .server-icon {
     width: 50px;
     height: 50px;
@@ -85,35 +85,25 @@ h1 {
     margin: 20px 0;
     transition: all 0.5s ease;
 }
-h1:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 20px #ff3232;
-}
+h1:hover {transform: scale(1.05); text-shadow: 0 0 20px #ff3232;}
 h2 {
     font-size: 36px;
     color: #ff3232;
     margin: 30px 0 20px;
     transition: all 0.5s ease;
 }
-h2:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 15px #ff3232;
-}
+h2:hover {transform: scale(1.05); text-shadow: 0 0 15px #ff3232;}
 
 /* Paragraphs */
-p {
-    line-height: 1.9;
-    color: #d0d7e0;
-    font-size: 17px;
-}
+p {line-height: 1.9; color: #d0d7e0; font-size: 17px;}
 
 /* Boxes */
 .box {
-    background: #151b2e;
+    background: #1e293b;
     border-radius: 25px;
     padding: 35px 30px;
     margin-top: 25px;
-    box-shadow: 8px 8px 25px rgba(0,0,0,0.5), -8px -8px 25px rgba(255,255,255,0.05);
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.6), -10px -10px 30px rgba(255,50,50,0.05);
     transition: all 0.5s ease;
     position: relative;
     overflow: hidden;
@@ -128,13 +118,8 @@ p {
     left: 0;
     transition: all 0.7s ease;
 }
-.box:hover::after {
-    top: 0;
-}
-.box:hover {
-    transform: translateY(-12px);
-    box-shadow: 12px 12px 35px rgba(0,0,0,0.6), -12px -12px 35px rgba(255,50,50,0.2);
-}
+.box:hover::after {top: 0;}
+.box:hover {transform: translateY(-12px);}
 
 /* Links */
 a {
@@ -156,13 +141,8 @@ a::after {
     left: 0;
     transition: all 0.4s ease;
 }
-a:hover {
-    color: #ff5959;
-    transform: scale(1.08) translateX(5px);
-}
-a:hover::after {
-    width: 100%;
-}
+a:hover {color: #ff5959; transform: scale(1.08) translateX(5px);}
+a:hover::after {width: 100%;}
 
 /* Admin Images */
 .admin-img {
@@ -174,10 +154,7 @@ a:hover::after {
     box-shadow: 0 5px 15px rgba(255,50,50,0.4);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
-.admin-img:hover {
-    transform: scale(1.4) rotate(-5deg);
-    box-shadow: 0 15px 35px rgba(255,50,50,0.7);
-}
+.admin-img:hover {transform: scale(1.4) rotate(-5deg); box-shadow: 0 15px 35px rgba(255,50,50,0.7);}
 
 /* Rules */
 .rules p {
@@ -186,19 +163,10 @@ a:hover::after {
     padding-left: 18px;
     position: relative;
 }
-.rules p::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #ff3232;
-}
+.rules p::before {content: '•'; position: absolute; left: 0; color: #ff3232;}
 
 /* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
+.clearfix::after {content: ""; clear: both; display: table;}
 </style>
 </head>
 <body>
@@ -212,7 +180,7 @@ a:hover::after {
   <img src="https://cdn.discordapp.com/icons/1331682748372488243/27cb0faccfbafe63dd4ea954dcc80513.webp?size=1024" class="server-icon">
 </h1>
 <p>
-سيرفر ستار هو سيرفر ديسكرود تتوفر فيه جميع وسائل الترفيه حيث تمنح لك فرصة لتعرف و تكوين صداقات من بلدان مختلفة وان تعيش معنا تجارب و قصص رائعة.
+سيرفر ستار هو سيرفر ديسكرود يتوفر فيه جميع وسائل الترفيه حيث تمنح لك فرصة لتعرف و تكوين صداقات من بلدان مختلفة وان تعيش معنا تجارب و قصص رائعة.
 <br><br>
 يختص سيرفرنا أيضاً في لعبة ماين كرافت هي لعبة عالم مفتوح تتيح للاعبين البناء، الاستكشاف، والبقاء على قيد الحياة في عالم مكوّن من مكعبات.
 </p>
