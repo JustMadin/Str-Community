@@ -293,16 +293,21 @@
         }
 
         // كود العداد الدائم
-        window.onload = function() {
-            fetch('https://api.countapi.xyz/hit/str-community-unique-v1/visits')
-                .then(res => res.json())
-                .then(res => {
-                    document.getElementById('count').innerHTML = res.value.toLocaleString();
-                })
-                .catch(err => {
-                    document.getElementById('count').innerHTML = "1,452"; 
-                });
-        }
+       window.onload = function() {
+    // هذا الرابط سيقوم بالعد تلقائياً في كل مرة يفتح فيها الموقع
+    const counterContainer = document.getElementById('count');
+    
+    // سنستخدم خدمة لعد الزيارات بسيطة ومباشرة
+    fetch('https://api.countapi.xyz/hit/str-community-live/visits')
+    .then(res => res.json())
+    .then(res => {
+        counterContainer.innerHTML = res.value;
+    })
+    .catch(() => {
+        // إذا تعطلت الخدمة، سيظهر رقم "بداية" بسيط
+        counterContainer.innerHTML = Math.floor(Math.random() * 10) + 5; 
+    });
+}
     </script>
 </body>
 </html>
