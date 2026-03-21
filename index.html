@@ -119,25 +119,29 @@
 
         .rules-list { list-style: none; }
         .rules-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; text-align: right; }
-        /* تنسيق زر الموسيقى */
+/* تنسيق زر الموسيقى الثابت */
 .music-player-btn {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    z-index: 9999;
-    width: 50px;
-    height: 50px;
-    background: var(--card-bg);
-    border: 2px solid var(--text-gold);
+    position: fixed !important; /* كلمة !important تجبره يثبت */
+    bottom: 30px !important;    /* المسافة من تحت */
+    left: 30px !important;      /* المسافة من اليسار */
+    z-index: 999999 !important; /* تخليه فوق كل الصور والكلام */
+    width: 60px;
+    height: 60px;
+    background: #11141b;
+    border: 2px solid #d4af37;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
     transition: 0.3s;
 }
 
+.music-player-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 30px #d4af37;
+}
 .music-player-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px var(--text-gold);
