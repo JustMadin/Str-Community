@@ -140,12 +140,15 @@
 </head>
 <body>
 
-    <div class="music-wrapper">
-        <div class="music-player-btn" id="musicBtn" onclick="toggleMusic()">
-            <i id="musicIcon" class="fas fa-play" style="color: #d4af37; font-size: 1.2rem;"></i>
-        </div>
-        <span class="song-name">اترو ومحبينة <i class="fas fa-music" style="font-size: 0.8rem; margin-right: 5px;"></i></span>
+   <div class="music-wrapper" style="display: flex; align-items: center; gap: 10px;">
+    <div class="music-player-btn" id="musicBtn" onclick="toggleMusic()">
+        <i id="musicIcon" class="fas fa-play" style="color: #d4af37; font-size: 1.2rem;"></i>
     </div>
+    
+    <div class="music-player-btn" id="skipBtn" onclick="nextSong()" style="width: 45px; height: 45px;">
+        <i class="fas fa-step-forward" style="color: #d4af37; font-size: 1rem;"></i>
+    </div>
+</div>
 
     <audio id="bgMusic" loop>
       <source src="https://cdn.discordapp.com/attachments/1472347009674383492/1485035733184942200/voice-message.ogg?ex=69c066cd&is=69bf154d&hm=5844b6f810349845970f7a3efa9d731695000c7a4874e6070264046e6ae30c1f&" type="audio/mpeg">
@@ -275,22 +278,48 @@
     </div>
 
     <script>
-        function toggleMusic() {
-            var audio = document.getElementById("bgMusic");
-            var icon = document.getElementById("musicIcon");
-            var btn = document.getElementById("musicBtn");
-            if (audio.paused) {
-                audio.play();
-                icon.classList.remove("fa-play");
-                icon.classList.add("fa-pause");
-                btn.classList.add("rotating-btn");
-            } else {
-                audio.pause();
-                icon.classList.remove("fa-pause");
-                icon.classList.add("fa-play");
-                btn.classList.remove("rotating-btn");
-            }
-        }
+// قائمة الـ 3 أغاني - ضع روابطك هنا
+var songs = [
+    "https://cdn.discordapp.com/attachments/1472347009674383492/1485038635202908282/1cc537b902e572e9.mp3?ex=69c06981&is=69bf1801&hm=8cf0d2e7876cf34246f1b3b9754083929f027f4f1904634b569ce02dba78e0f3&", // الأغنية الأولى
+    "https://cdn.discordapp.com/attachments/1472347009674383492/1485035733184942200/voice-message.ogg?ex=69c066cd&is=69bf154d&hm=5844b6f810349845970f7a3efa9d731695000c7a4874e6070264046e6ae30c1f&", 
+    "https://cdn.discordapp.com/attachments/1472347009674383492/1485040342834216990/voice-message.ogg?ex=69c06b18&is=69bf1998&hm=6934efde6b1addd37ad993807d91bff2170c20a820c9b1e5ee16dab5aa3a8d05&"
+];
+
+var currentSongIndex = 0;
+var audio = document.getElementById("bgMusic");
+
+// وظيفة الانتقال للأغنية التالية
+function nextSong() {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    audio.src = songs[currentSongIndex];
+    audio.play();
+    updateUI(true);
+}
+
+// إذا انتهت الأغنية تعمل اللي بعدها تلقائياً
+audio.onended = nextSong;
+
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play();
+        updateUI(true);
+    } else {
+        audio.pause();
+        updateUI(false);
+    }
+}
+
+function updateUI(isPlaying) {
+    var icon = document.getElementById("musicIcon");
+    var btn = document.getElementById("musicBtn");
+    if (isPlaying) {
+        icon.classList.replace("fa-play", "fa-pause");
+        btn.classList.add("rotating-btn");
+    } else {
+        icon.classList.replace("fa-pause", "fa-play");
+        btn.classList.remove("rotating-btn");
+    }
+}
 
         // كود العداد الدائم
 window.onload = function() {
