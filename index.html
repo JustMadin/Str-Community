@@ -5,21 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>STR Community</title>
 <style>
+/* Reset & Base */
+* {margin:0;padding:0;box-sizing:border-box;}
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background: #0f172a;
     color: #fff;
+    overflow-x: hidden;
 }
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     min-height: 100vh;
+    position: relative;
 }
 .container {
     max-width: 1100px;
     margin: auto;
 }
 .center {text-align: center;}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Logo */
 img.logo {
     width: 150px;
     height: 150px;
@@ -28,67 +44,102 @@ img.logo {
     float: left;
     margin-left: 20px;
     border: 3px solid #ff3232;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 img.logo:hover {
-    transform: scale(1.1) rotate(15deg);
+    transform: scale(1.2) rotate(15deg);
+    box-shadow: 0 15px 30px rgba(255,50,50,0.4);
 }
+
+/* Headings */
 h1 {
-    font-size: 40px;
-    margin: 10px 0;
-    color: #ff3232;
-}
-h2 {
-    font-size: 28px;
+    font-size: 48px;
     margin: 20px 0;
     color: #ff3232;
+    letter-spacing: 2px;
 }
+h2 {
+    font-size: 32px;
+    margin: 30px 0 20px;
+    color: #ff3232;
+    letter-spacing: 1px;
+}
+
+/* Paragraphs */
 p {
-    line-height: 1.8;
+    line-height: 1.9;
     color: #cbd5e1;
+    font-size: 16px;
 }
+
+/* Boxes */
 .box {
-    background: #1e293b;
-    padding: 25px;
-    border-radius: 15px;
-    margin-top: 20px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, background 0.3s ease;
+    background: linear-gradient(145deg, #1e293b, #273449);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    transition: transform 0.5s ease, background 0.5s ease, box-shadow 0.5s ease;
 }
 .box:hover {
-    transform: translateY(-5px);
-    background: #273449;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
 }
+
+/* Links */
 a {
     color: #ff3232;
     text-decoration: none;
     display: block;
-    margin: 10px 0;
+    margin: 12px 0;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 a:hover {
     color: #ff5959;
-    transform: scale(1.05);
+    transform: scale(1.08) translateX(5px);
 }
-.rules p {margin: 8px 0;}
+
+/* Admin Images */
 .admin-img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     margin-top: 10px;
     border: 2px solid #ff3232;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 .admin-img:hover {
-    transform: scale(1.2);
+    transform: scale(1.3) rotate(-5deg);
+    box-shadow: 0 10px 25px rgba(255,50,50,0.5);
+}
+
+/* Rules */
+.rules p {
+    margin: 10px 0;
+    font-size: 16px;
+    position: relative;
+    padding-left: 15px;
+}
+.rules p::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #ff3232;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 </style>
 </head>
 <body>
 
 <section>
-<div class="container">
+<div class="container clearfix fade-in">
 <img src="27cb0faccfbafe63dd4ea954dcc80513.webp" class="logo">
 <div class="center">
 <h1>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬 ✨</h1>
@@ -97,8 +148,13 @@ a:hover {
 <br><br>
 يختص سيرفرنا أيضاً في لعبة ماين كرافت هي لعبة عالم مفتوح تتيح للاعبين البناء، الاستكشاف، والبقاء على قيد الحياة في عالم مكوّن من مكعبات.
 </p>
+</div>
+</div>
+</section>
 
-<h2>Management 👑</h2>
+<section>
+<div class="container fade-in">
+<h2 class="center">Management 👑</h2>
 <div class="box">
 <p>
 <a href="https://discord.com/users/944053364323405914" target="_blank">Owner Ship : SANJI</a><br>
@@ -118,11 +174,10 @@ a:hover {
 </p>
 </div>
 </div>
-</div>
 </section>
 
 <section>
-<div class="container center">
+<div class="container center fade-in">
 <div class="box">
 <h2>Links Of Social 🌐</h2>
 <a href="https://discord.gg/str7" target="_blank">Discord</a>
@@ -132,7 +187,7 @@ a:hover {
 </section>
 
 <section>
-<div class="container rules">
+<div class="container rules fade-in">
 <h2 class="center">قوانين السيرفر 📜</h2>
 <p>1- يجب إحترام الأعضاء / الإدارة 🤝</p>
 <p>2- السب والشتم ممنوع ❌</p>
@@ -148,7 +203,7 @@ a:hover {
 </section>
 
 <section>
-<div class="container center">
+<div class="container center fade-in">
 <h2>خريطة السيرفر 🗺️</h2>
 <div class="box">
 <a href="https://discord.com/channels/1331682748372488243/1331959881648967822">اخبار السيرفر</a>
@@ -161,6 +216,20 @@ a:hover {
 </div>
 </div>
 </section>
+
+<script>
+// Scroll fade-in effect
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
 
 </body>
 </html>
