@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STR・COMMUNTY | ستار كميونتي</title>
+    <title>𝗦𝗧𝗥・ＣＯＭＭ𝗨幫𝗜𝗧𝗬 | ستار كميونتي</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -24,7 +24,7 @@
             color: var(--text-white); 
             background-attachment: fixed; 
             line-height: 1.6; 
-            perspective: 1500px; /* لتمكين تأثير الـ 3D */
+            perspective: 1500px; 
         }
 
         .container { max-width: 1100px; margin: auto; padding: 20px; }
@@ -67,8 +67,8 @@
             transform-style: preserve-3d;
         }
         .goal-section:hover { 
-            transform: translateZ(100px) rotateX(5deg); 
-            box-shadow: 0 40px 70px rgba(0,0,0,0.8);
+            transform: translateZ(80px) rotateX(4deg); 
+            box-shadow: 0 40px 70px rgba(0,0,0,0.8), 0 0 20px rgba(212, 175, 55, 0.2);
             border-color: var(--text-gold);
         }
 
@@ -81,19 +81,26 @@
         .rank-sevelom { color: #ffc103; border-color: #ffc103; background: rgba(255,193,3,0.1); }
         .rank-sz6v { color: #fff; border-color: #fff; background: rgba(255,255,255,0.1); }
 
-        /* --- أزرار التواصل --- */
-        .social-btn { text-decoration: none; color: white; padding: 12px; border-radius: 12px; font-weight: bold; display: flex; align-items: center; gap: 8px; justify-content: center; border: 2px solid; transition: 0.3s; }
+        /* --- أزرار التواصل (تأثير التوهج Neon) --- */
+        .social-btn { 
+            text-decoration: none; padding: 15px; border-radius: 15px; font-weight: bold; 
+            display: flex; align-items: center; gap: 10px; justify-content: center; 
+            border: 2px solid; transition: all 0.3s ease;
+        }
         .discord-btn { border-color: #5865F2; color: #5865F2; }
-        .tiktok-btn { border-color: #fff; color: #fff; }
+        .discord-btn:hover { background: #5865F2; color: white; box-shadow: 0 0 20px #5865F2; }
+        
+        .tiktok-btn { border-color: #ffffff; color: #ffffff; }
+        .tiktok-btn:hover { background: #ffffff; color: #000; box-shadow: 0 0 20px #ffffff; }
 
         /* --- شريط الأهداف --- */
         .progress-bar-wrap { width: 100%; height: 25px; background: #222; border-radius: 50px; overflow: hidden; margin-top: 15px; border: 1px solid #333; }
-        .progress-fill { height: 100%; width: 58%; background: linear-gradient(90deg, #b8860b, #d4af37); box-shadow: 0 0 15px var(--text-gold); }
+        .progress-fill { height: 100%; width: 58%; background: linear-gradient(90deg, #b8860b, #d4af37, #f39c12); box-shadow: 0 0 15px var(--text-gold); }
 
         /* --- القوانين --- */
         .rules-list { list-style: none; }
         .rules-list li { display: flex; align-items: center; gap: 10px; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
-        .rules-list li:hover { padding-right: 20px; color: var(--text-gold); }
+        .rules-list li:hover { padding-right: 20px; color: var(--text-gold); background: rgba(212, 175, 55, 0.05); }
     </style>
 </head>
 <body>
@@ -106,7 +113,7 @@
 
         <header>
             <h1>𝗦𝗧𝗥・ＣＯＭＭ𝗨幫𝗜𝗧𝗬</h1>
-            <p style="color: #b8a038;">وجهتك الذهبية للترفيه ومغامرات ماين كرافت</p>
+            <p style="color: #b8a038; font-weight: bold;">وجهتك الذهبية للترفيه ومغامرات ماين كرافت</p>
         </header>
 
         <div class="section">
@@ -130,52 +137,52 @@
         <div class="section">
             <h2><i class="fas fa-users-gear"></i> Staff Management</h2>
             <div class="grid">
-                <a href="https://discord.com/users/112233445566" target="_blank" class="card"><h3>MAJID</h3><div class="rank-tag rank-majid">King Ship</div></a>
-                <a href="https://discord.com/users/112233445566" target="_blank" class="card"><h3>MADIN</h3><div class="rank-tag rank-madin">Co Founder</div></a>
-                <a href="https://discord.com/users/112233445566" target="_blank" class="card"><h3>SEVELOM</h3><div class="rank-tag rank-sevelom">Manager</div></a>
-                <a href="https://discord.com/users/112233445566" target="_blank" class="card"><h3>SZ6V</h3><div class="rank-tag rank-sz6v">واسطة 😹</div></a>
+                <a href="https://discord.com/users/1301649715577749556" target="_blank" class="card"><h3>MAJID</h3><div class="rank-tag rank-majid">King Ship</div></a>
+                <a href="https://discord.com/users/984241144462462986" target="_blank" class="card"><h3>MADIN</h3><div class="rank-tag rank-madin">Co Founder</div></a>
+                <a href="https://discord.com/users/839876110794752030" target="_blank" class="card"><h3>SEVELOM</h3><div class="rank-tag rank-sevelom">Manager</div></a>
+                <a href="https://discord.com/users/1369783861285752872" target="_blank" class="card"><h3>SZ6V</h3><div class="rank-tag rank-sz6v">واسطة</div></a>
             </div>
         </div>
 
         <div class="section">
             <h2><i class="fas fa-share-nodes"></i> Social Media</h2>
             <div class="grid">
-                <a href="https://discord.gg/str7" target="_blank" class="social-btn discord-btn"><i class="fab fa-discord"></i> Discord</a>
-                <a href="https://www.tiktok.com/@l3ei_7" target="_blank" class="social-btn tiktok-btn"><i class="fab fa-tiktok"></i> TikTok</a>
+                <a href="https://discord.gg/str7" target="_blank" class="social-btn discord-btn"><i class="fab fa-discord"></i> Discord Server</a>
+                <a href="https://www.tiktok.com/@l3ei_7" target="_blank" class="social-btn tiktok-btn"><i class="fab fa-tiktok"></i> TikTok Account</a>
             </div>
         </div>
 
         <div class="section">
             <h2><i class="fas fa-map-location-dot"></i> Server Map</h2>
             <div class="grid">
-                <a href="#" class="card"><i class="fas fa-bullhorn" style="color:var(--text-gold); font-size:1.5rem;"></i><p>أخبار السيرفر</p></a>
-                <a href="#" class="card"><i class="fas fa-comments" style="color:var(--text-gold); font-size:1.5rem;"></i><p>الشات العام</p></a>
-                <a href="#" class="card"><i class="fas fa-gift" style="color:var(--text-gold); font-size:1.5rem;"></i><p>الفعاليات</p></a>
-                <a href="#" class="card"><i class="fas fa-lightbulb" style="color:var(--text-gold); font-size:1.5rem;"></i><p>الأقتراحات</p></a>
-                <a href="#" class="card"><i class="fas fa-headset" style="color:var(--text-gold); font-size:1.5rem;"></i><p>الدعم الفني</p></a>
-                <a href="#" class="card"><i class="fas fa-cubes" style="color:var(--text-gold); font-size:1.5rem;"></i><p>أخبار ماينكرافت</p></a>
+                <a href="https://discord.gg/str7" target="_blank" class="card"><i class="fas fa-bullhorn" style="color:var(--text-gold); font-size:1.5rem;"></i><p>أخبار السيرفر</p></a>
+                <a href="https://discord.gg/str7" target="_blank" class="card"><i class="fas fa-comments" style="color:var(--text-gold); font-size:1.5rem;"></i><p>الشات العام</p></a>
+                <a href="https://discord.gg/str7" target="_blank" class="card"><i class="fas fa-gift" style="color:var(--text-gold); font-size:1.5rem;"></i><p>الفعاليات</p></a>
+                <a href="https://discord.gg/str7" target="_blank" class="card"><i class="fas fa-lightbulb" style="color:var(--text-gold); font-size:1.5rem;"></i><p>الأقتراحات</p></a>
+                <a href="https://discord.gg/str7" target="_blank" class="card"><i class="fas fa-headset" style="color:var(--text-gold); font-size:1.5rem;"></i><p>الدعم الفني</p></a>
+                <a href="https://discord.gg/str7" target="_blank" class="card"><i class="fas fa-cubes" style="color:var(--text-gold); font-size:1.5rem;"></i><p>أخبار ماينكرافت</p></a>
             </div>
         </div>
 
         <div class="section">
             <h2><i class="fas fa-scroll"></i> Server Rules</h2>
             <ul class="rules-list">
-                <li><i class="fas fa-check-circle" style="color:var(--text-gold)"></i> ¹- يـجـب إحـتـرام الأعـضـاء / الإدارة و عـدم الإسـاءة لـهـم</li>
-                <li><i class="fas fa-check-circle" style="color:var(--text-gold)"></i> ²- الـسـب و الـشـتـم بـكـل أنـواعـه و سـبـام كـلام وراء بـعـض</li>
-                <li><i class="fas fa-check-circle" style="color:var(--text-gold)"></i> ³- عـدم الـتـحـدث عـن ( الـسـيـاسـة / الـطـوائـف / الـعـنـصـريـة )</li>
-                <li><i class="fas fa-check-circle" style="color:var(--text-gold)"></i> ⁴- مـمـنـوع الـتـبـادل أو الـطـلـبـات مـثـل (رتـبة / كـريـدت / سـيـرفـرات )</li>
-                <li><i class="fas fa-check-circle" style="color:var(--text-gold)"></i> ٥- عـدم ذكـر أسـمـاء سـيـرفـرات حـتـى لـو كـان سـيـرفـر لـ يـوتـيـوبـر</li>
-                <li><i class="fas fa-check-circle" style="color:var(--text-gold)"></i> ٦- عـدم إسـتـخـدام أوامـر الـبـوتـات الا بـالـشـات مـخـصـص لـهـا</li>
-                <li><i class="fas fa-check-circle" style="color:var(--text-gold)"></i> ٧- عـدم الـتـلـمـيـح بـالـسـب و الـتـغـازل بـكـل أنـواعـه</li>
-                <li><i class="fas fa-check-circle" style="color:var(--text-gold)"></i> ٨- عـدم إرسـال روابـط سـيـرفـرات فـي سـيـرفـرنـا أو بـالـخـاص</li>
-                <li><i class="fas fa-check-circle" style="color:var(--text-gold)"></i> ٩- عـدم الـتـدخـل بـشـؤون الادارة و عـدم إزعـاجـهـم</li>
-                <li><i class="fas fa-check-circle" style="color:var(--text-gold)"></i> ¹⁰- مـشـاكـل الـخـاص لـيـس لـديـنـا أي عـلاقـة فـيـهـا</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ¹- يـجـب إحـتـرام الأعـضـاء / الإدارة و عـدم الإسـاءة لـهـم</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ²- الـسـب و الـشـتـم بـكـل أنـواعـه و سـبـام كـلام وراء بـعـض</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ³- عـدم الـتـحـدث عـن ( الـسـيـاسـة / الـطـوائـف / الـعـنـصـريـة )</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ⁴- مـمـنـوع الـتـبـادل أو الـطـلـبـات مـثـل (رتـبة / كـريـدت / سـيـرفـرات )</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ٥- عـدم ذكـر أسـمـاء سـيـرفـرات حـتـى لـو كـان سـيـرفـر لـ يـوتـيـوبـر</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ٦- عـدم إسـتـخـدام أوامـر الـبـوتـات الا بـالـشـات مـخـصـص لـهـا</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ٧- عـدم الـتـلـمـيـح بـالـسـب و الـتـغـازل بـكـل أنـواعـه</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ٨- عـدم إرسـال روابـط سـيـرفـرات فـي سـيـرفـرنـا أو بـالـخـاص</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ٩- عـدم الـتـدخـل بـشـؤون الادارة و عـدم إزعـاجـهـم</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ¹⁰- مـشـاكـل الـخـاص لـيـس لـديـنـا أي عـلاقـة فـيـهـا</li>
             </ul>
         </div>
 
         <div class="section goal-section" dir="ltr">
             <h2><i class="fas fa-bullseye"></i> Community Goal</h2>
-            <div style="display: flex; justify-content: space-between; font-weight: bold;">
+            <div style="display: flex; justify-content: space-between; font-weight: bold; font-family: sans-serif;">
                 <span>5,800 Members</span>
                 <span style="color: var(--text-gold);">10,000 Target</span>
             </div>
