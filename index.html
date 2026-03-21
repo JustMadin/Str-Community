@@ -120,11 +120,12 @@
         .rules-list { list-style: none; }
         .rules-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; text-align: right; }
 /* تنسيق زر الموسيقى الثابت */
+/* الزر الذهبي الثابت */
 .music-player-btn {
-    position: fixed !important; /* كلمة !important تجبره يثبت */
-    bottom: 30px !important;    /* المسافة من تحت */
-    left: 30px !important;      /* المسافة من اليسار */
-    z-index: 999999 !important; /* تخليه فوق كل الصور والكلام */
+    position: fixed !important;
+    bottom: 30px !important;
+    left: 30px !important;
+    z-index: 999999 !important;
     width: 60px;
     height: 60px;
     background: #11141b;
@@ -138,13 +139,34 @@
     transition: 0.3s;
 }
 
-.music-player-btn:hover {
-    transform: scale(1.1) rotate(10deg);
-    box-shadow: 0 0 30px #d4af37;
+/* اسم الأغنية مع الأيقونة */
+.song-name {
+    position: absolute;
+    left: 75px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(17, 20, 27, 0.95);
+    color: #d4af37;
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: 1px solid #d4af37;
+    white-space: nowrap;
+    font-weight: bold;
+    font-family: sans-serif;
+    opacity: 0;
+    transition: 0.4s ease;
+    pointer-events: none;
+    direction: rtl;
 }
+
+.music-player-btn:hover .song-name {
+    opacity: 1;
+    left: 85px;
+}
+
 .music-player-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px var(--text-gold);
 }
     </style>
 </head>
@@ -261,7 +283,8 @@
                 <div class="progress-fill"></div>
             </div>
             <p style="text-align: center; color: var(--text-gold); margin-top: 15px; font-weight: bold;">58% Completed</p>
-        </div>
+     </div>
+        
 <div style="text-align: center; padding: 40px; color: var(--text-gold);">
         <h2>شكراً لتواجدكم معنا 💛</h2>
     </div>
@@ -271,9 +294,9 @@
     </audio>
 
     <div class="music-player-btn" onclick="toggleMusic()">
-        <i id="musicIcon" class="fas fa-play" style="color: #d4af37; font-size: 1.2rem;"></i>
-        <span class="song-name">Solo Leveling OST 🎵</span>
-    </div>
+    <i id="musicIcon" class="fas fa-play" style="color: #d4af37; font-size: 1.2rem;"></i>
+    <span class="song-name">اترو ومحبينة <i class="fas fa-music" style="margin-right: 5px; font-size: 0.9rem;"></i></span>
+</div>
 
     <script>
         function toggleMusic() {
