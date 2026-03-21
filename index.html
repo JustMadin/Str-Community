@@ -9,181 +9,142 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    background: #0a0a0a;
     color: #fff;
-    scroll-behavior: smooth;
 }
 section {
-    padding: 80px 20px;
+    padding: 60px 20px;
     min-height: 100vh;
 }
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
 }
-.center { text-align: center; }
 
-/* -------------------- اللوجو والعناوين -------------------- */
-img.logo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    float: left;
-    margin-left: 20px;
-    border: 3px solid #38bdf8;
-    transition: transform 0.3s ease;
-}
-img.logo:hover {
-    transform: rotate(20deg) scale(1.1);
-}
-
+/* -------------------- العناوين -------------------- */
 h1 {
-    font-size: 42px;
-    margin: 10px 0;
-    background: linear-gradient(90deg, #38bdf8, #06b6d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    text-align: center;
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700;
+    margin-bottom: 10px;
 }
 h2 {
-    font-size: 30px;
-    margin: 20px 0;
-    color: #38bdf8;
-}
-
-/* -------------------- النصوص -------------------- */
-p {
-    line-height: 1.8;
-    color: #cbd5e1;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #FFD700;
 }
 
 /* -------------------- الصناديق -------------------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
 .box {
-    background: #1e293b;
-    padding: 25px 20px;
-    border-radius: 20px;
-    margin-top: 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, background 0.3s ease;
+    background: #1a1a1a;
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .box:hover {
     transform: translateY(-5px);
-    background: #273449;
+    box-shadow: 0 0 15px #FFD700;
 }
 
 /* -------------------- الروابط -------------------- */
 a {
-    color: #38bdf8;
-    text-decoration: none;
     display: block;
-    margin: 12px 0;
+    text-decoration: none;
+    color: #FFD700;
     font-weight: bold;
+    margin: 10px 0;
     transition: all 0.3s ease;
 }
 a:hover {
-    color: #06b6d4;
-    transform: scale(1.05);
+    color: #fff;
+    background: #FFD700;
+    padding: 5px 10px;
+    border-radius: 8px;
 }
 
-/* -------------------- القوانين -------------------- */
-.rules p {
-    margin: 10px 0;
-    font-size: 18px;
-}
-
-/* -------------------- صور الإدارة -------------------- */
+/* -------------------- الصور -------------------- */
 .admin-img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     margin-top: 10px;
-    border: 2px solid #38bdf8;
+    border: 2px solid #FFD700;
     transition: transform 0.3s ease;
 }
 .admin-img:hover {
-    transform: scale(1.2) rotate(10deg);
+    transform: scale(1.2);
+}
+
+/* -------------------- زر التبديل -------------------- */
+.toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #FFD700;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px #FFD700;
+    transition: all 0.3s ease;
+}
+.toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #FFD700;
 }
 </style>
 </head>
 <body>
 
-<!-- الصفحة الأولى -->
 <section>
 <div class="container">
-<img src="27cb0faccfbafe63dd4ea954dcc80513.webp" class="logo">
-<div class="center">
-<h1>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬 ✨</h1>
-<p>
-🎮 سيرفر ستار هو مجتمع ديسكورد مليء بالمرح والترفيه! هنا يمكنك تكوين صداقات جديدة من جميع أنحاء العالم وخوض تجارب وقصص لا تُنسى.  
-🛠️ نركز أيضاً على لعبة <strong>ماين كرافت</strong> حيث يمكنكم البناء والاستكشاف والبقاء على قيد الحياة في عالم المكعبات.
-</p>
+<h1>STR Community ✨</h1>
 
-<h2>Management 👑</h2>
+<h2>إدارة السيرفر 👑</h2>
+<div class="grid">
 <div class="box">
-<p>
-<a href="https://discord.com/users/944053364323405914" target="_blank">Owner Ship : SANJI 🌟</a>
+<a href="#">Owner Ship: SANJI</a>
 <img src="https://cdn.discordapp.com/avatars/944053364323405914/73bc30883d61ed7bc6a000b9c3ca375d.webp?size=1024" class="admin-img">
-</p>
-<p>
-<a href="https://discord.com/users/1134505693861388338" target="_blank">Owner : BAKI 🔹</a>
+</div>
+<div class="box">
+<a href="#">Owner: BAKI</a>
 <img src="https://cdn.discordapp.com/avatars/1134505693861388338/f4a8d73d777cc5e1faf21d912a23efe0.webp?size=1024" class="admin-img">
-</p>
-<p>
-<a href="https://discord.com/users/1190396076222587002" target="_blank">CO OWNER : MUSTAFA 🔹</a>
+</div>
+<div class="box">
+<a href="#">CO OWNER: MUSTAFA</a>
 <img src="https://cdn.discordapp.com/avatars/1190396076222587002/faadabf1a6b0a9dfc7b1dd55ca55b0c9.webp?size=1024" class="admin-img">
-</p>
-<p>
-<a href="https://discord.com/users/1301649715577749556" target="_blank">CO OWNER : MAJED 🔹</a>
+</div>
+<div class="box">
+<a href="#">CO OWNER: MAJED</a>
 <img src="https://cdn.discordapp.com/avatars/1301649715577749556/531ca8e0c8b77f92dcd077ebcc6807e8.webp?size=1024" class="admin-img">
-</p>
 </div>
 </div>
 </div>
 </section>
 
-<!-- الصفحة الثانية -->
 <section>
-<div class="container center">
+<div class="container">
+<h2>الروابط الرسمية 🌐</h2>
+<div class="grid">
 <div class="box">
-<h2>Links Of Social 🌐</h2>
-<a href="https://discord.gg/str7" target="_blank">💬 Discord</a>
-<a href="https://www.tiktok.com/@l3ei_7" target="_blank">🎵 TikTok</a>
+<a href="https://discord.gg/str7">💬 Discord</a>
+<a href="https://www.tiktok.com/@l3ei_7">🎵 TikTok</a>
 </div>
 </div>
-</section>
-
-<!-- الصفحة الثالثة -->
-<section>
-<div class="container rules">
-<h2 class="center">قوانين السيرفر 📜</h2>
-<p>1- يجب إحترام الأعضاء / الإدارة 🤝</p>
-<p>2- السب والشتم ممنوع ❌</p>
-<p>3- ممنوع السياسة والطائفية 🚫</p>
-<p>4- ممنوع التبادل والطلبات 📦</p>
-<p>5- منع ذكر سيرفرات 🔇</p>
-<p>6- استخدام البوت في مكانه 🤖</p>
-<p>7- منع التلميح والايحاءات ⚠️</p>
-<p>8- منع نشر روابط 🔗</p>
-<p>9- عدم إزعاج الإدارة 🙏</p>
-<p>10- الخاص ليس مسؤوليتنا 💌</p>
 </div>
 </section>
 
-<!-- الصفحة الرابعة -->
-<section>
-<div class="container center">
-<h2>خريطة السيرفر 🗺️</h2>
-<div class="box">
-<a href="https://discord.com/channels/1331682748372488243/1331959881648967822">📰 اخبار السيرفر</a>
-<a href="https://discord.com/channels/1331682748372488243/1331959147649826898">📜 القوانين</a>
-<a href="https://discord.com/channels/1331682748372488243/1416180157051572314">💬 الشات العام</a>
-<a href="https://discord.com/channels/1331682748372488243/1416213834359767182">🏅 اختر رتبك</a>
-<a href="https://discord.com/channels/1331682748372488243/1416213530037846128">🛠️ الدعم الفني</a>
-<a href="https://discord.com/channels/1331682748372488243/1416214568291799163">🎉 الفعاليات</a>
-<a href="https://discord.com/channels/1331682748372488243/1416217109696086137">⛏️ اخبار ماين كرافت</a>
-</div>
-</div>
-</section>
+<!-- زر التبديل -->
+<div class="toggle-btn">سورة الفاتحة</div>
 
 </body>
 </html>
