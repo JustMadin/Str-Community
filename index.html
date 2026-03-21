@@ -13,8 +13,10 @@
             --border-color: #2d2d10;
             --text-gold: #d4af37; 
             --accent-glow: #f1c40f; 
+            --neon-gold: #f39c12; 
             --text-white: #ffffff;
             --progress-bg: #2d2d2d;
+            --transition-speed: 0.5s;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,24 +29,33 @@
             line-height: 1.6;
         }
 
-        /* --- تعديل مكان الصورة لتظهر رأس الشخصية --- */
         .banner-wrapper {
             max-width: 1100px;
             margin: 20px auto 0;
             padding: 0 20px;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .server-banner {
             width: 100%;
-            height: 300px; /* زدت الطول قليلاً لتفاصيل أكثر */
+            height: 300px; 
             background: url('https://cdn.discordapp.com/banners/1331682748372488243/49d3af0028344ad3f13c6b66bbaf2b40.webp?size=1024');
             background-size: cover;
-            background-position: top center; /* هنا التعديل: يركز على أعلى الصورة */
+            background-position: top center; 
             border-radius: 25px;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--neon-gold);
+            box-shadow: 0 0 10px var(--neon-gold), 0 0 20px var(--neon-gold);
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .banner-wrapper:hover .server-banner {
+            box-shadow: 0 0 15px #ffb347, 0 0 30px #ffb347;
+            background-image: none;
+            background-color: #000;
         }
 
         .logo-holder {
@@ -53,6 +64,7 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 5;
+            transition: all var(--transition-speed) ease;
         }
 
         .logo-main { 
@@ -60,16 +72,34 @@
             height: 130px; 
             border-radius: 50%; 
             border: 4px solid #11141b;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
             background-color: #11141b;
         }
 
+        .banner-wrapper:hover .logo-holder { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            text-align: center;
+            opacity: 0;
+            transition: all var(--transition-speed) ease;
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #d4af37, #f1c40f, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .banner-wrapper:hover .hover-text { opacity: 1; }
+
         header { text-align: center; margin-top: 75px; margin-bottom: 50px; }
-        header h1 { font-size: 2.2rem; color: var(--text-gold); letter-spacing: 2px; }
+        header h1 { font-size: 2.2rem; color: var(--text-gold); }
 
         .container { max-width: 1100px; margin: auto; padding: 20px; }
 
-        /* --- الأقسام --- */
         .section { 
             background: rgba(17, 20, 27, 0.7); 
             border: 1px solid var(--border-color); 
@@ -86,7 +116,6 @@
             display: flex; 
             align-items: center; 
             gap: 12px; 
-            font-size: 1.6rem;
         }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
@@ -99,50 +128,33 @@
             text-align: center; 
             transition: 0.3s; 
         }
-        .card:hover { transform: translateY(-8px); border-color: var(--text-gold); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1); }
-        .card i { color: var(--text-gold); margin-bottom: 15px; }
+        .card:hover { transform: translateY(-8px); border-color: var(--text-gold); }
 
-        .rank-tag { 
-            display: inline-block; 
-            font-size: 0.75rem; 
-            color: var(--text-gold); 
-            background: rgba(212, 175, 55, 0.1); 
-            border: 1px solid var(--text-gold); 
-            border-radius: 8px; 
-            padding: 4px 15px; 
-            margin: 10px 0; 
-            font-weight: bold; 
-        }
+        /* --- استايلات الرتب الجديدة --- */
+        .rank-tag { display: inline-block; font-size: 0.75rem; border-radius: 8px; padding: 4px 15px; margin: 10px 0; font-weight: bold; border: 1px solid; }
+        
+        .rank-kingship { color: #ffcc00; background: rgba(255, 204, 0, 0.1); border-color: #ffcc00; }
+        .rank-cofounder { color: #ff4d4d; background: rgba(255, 77, 77, 0.1); border-color: #ff4d4d; }
+        .rank-manager { color: #e6b800; background: rgba(230, 184, 0, 0.1); border-color: #e6b800; }
+        .rank-wasata { color: #ffffff; background: rgba(255, 255, 255, 0.1); border-color: #ffffff; }
+        .rank-default { color: var(--text-gold); background: rgba(212, 175, 55, 0.1); border-color: var(--text-gold); }
 
         .btn-link { 
-            display: inline-block; 
-            margin-top: 12px; 
-            padding: 8px 20px; 
-            border: 1px solid var(--text-gold); 
-            border-radius: 10px; 
-            color: var(--text-gold); 
-            text-decoration: none; 
-            font-weight: bold; 
-            transition: 0.3s; 
+            display: inline-block; margin-top: 12px; padding: 8px 20px; border: 1px solid var(--text-gold); 
+            border-radius: 10px; color: var(--text-gold); text-decoration: none; font-weight: bold; transition: 0.3s; 
         }
         .btn-link:hover { background: var(--text-gold); color: #000; }
 
         .social-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .social-btn { 
-            text-decoration: none; color: white; padding: 12px 35px; border-radius: 15px;
-            font-weight: bold; display: flex; align-items: center; gap: 12px; transition: 0.3s; min-width: 220px; justify-content: center;
-        }
-        .discord-btn { border: 2.5px solid #5865F2; color: #5865F2; }
-        .discord-btn:hover { background: #5865F2; color: white; }
-        .tiktok-btn { border: 2.5px solid #fff; color: #fff; }
-        .tiktok-btn:hover { background: #fff; color: #000; }
+        .social-btn { text-decoration: none; color: white; padding: 12px 35px; border-radius: 15px; font-weight: bold; display: flex; align-items: center; gap: 12px; min-width: 220px; justify-content: center; border: 2.5px solid; }
+        .discord-btn { border-color: #5865F2; color: #5865F2; }
+        .tiktok-btn { border-color: #fff; color: #fff; }
 
         .rules-list { list-style: none; }
         .rules-list li { padding: 12px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.05); display: flex; align-items: center; gap: 10px; }
-        .rules-list li i { color: var(--text-gold); }
-
-        .progress-bar-wrap { width: 100%; height: 25px; background: var(--progress-bg); border-radius: 50px; overflow: hidden; border: 1px solid var(--border-color); margin-top: 15px; }
-        .progress-fill { height: 100%; width: 58%; background: linear-gradient(90deg, #b8860b, #d4af37); box-shadow: 0 0 15px var(--text-gold); }
+        
+        .progress-bar-wrap { width: 100%; height: 25px; background: var(--progress-bg); border-radius: 50px; overflow: hidden; margin-top: 15px; }
+        .progress-fill { height: 100%; width: 58%; background: linear-gradient(90deg, #b8860b, #d4af37); }
 
         .thanks-section { text-align: center; padding: 60px 20px; border-top: 2px solid var(--border-color); margin-top: 50px; }
     </style>
@@ -151,6 +163,7 @@
 
     <div class="banner-wrapper">
         <div class="server-banner">
+            <div class="hover-text">أهلاً وسهلاً بك في أفضل سيرفر عربي ماينكرافتي</div>
             <div class="logo-holder">
                 <img src="https://cdn.discordapp.com/icons/1331682748372488243/27cb0faccfbafe63dd4ea954dcc80513.webp?size=1024" class="logo-main">
             </div>
@@ -169,20 +182,46 @@
                 <div class="card">
                     <img src="https://cdn.discordapp.com/avatars/944053364323405914/73bc30883d61ed7bc6a000b9c3ca375d.webp?size=128" style="width:80px; border-radius:50%; border:2px solid var(--text-gold);">
                     <h3 style="margin-top:10px;">SANJI</h3>
-                    <div class="rank-tag">Owner Ship</div>
+                    <div class="rank-tag rank-default">Owner Ship</div>
                     <br><a href="https://discord.com/users/944053364323405914" target="_blank" class="btn-link">Profile</a>
                 </div>
                 <div class="card">
                     <img src="https://cdn.discordapp.com/avatars/1134505693861388338/f4a8d73d777cc5e1faf21d912a23efe0.webp?size=128" style="width:80px; border-radius:50%; border:2px solid var(--text-gold);">
                     <h3 style="margin-top:10px;">BAKI</h3>
-                    <div class="rank-tag">Owner</div>
+                    <div class="rank-tag rank-default">Owner</div>
                     <br><a href="https://discord.com/users/1134505693861388338" target="_blank" class="btn-link">Profile</a>
                 </div>
                 <div class="card">
                     <img src="https://cdn.discordapp.com/avatars/1190396076222587002/faadabf1a6b0a9dfc7b1dd55ca55b0c9.webp?size=128" style="width:80px; border-radius:50%; border:2px solid var(--text-gold);">
                     <h3 style="margin-top:10px;">MUSTAFA</h3>
-                    <div class="rank-tag">Co Owner</div>
+                    <div class="rank-tag rank-default">Co Owner</div>
                     <br><a href="https://discord.com/users/1190396076222587002" target="_blank" class="btn-link">Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-users-gear"></i> Staff Management</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 style="margin-top:10px;">MAJID</h3>
+                    <div class="rank-tag rank-kingship">King Ship</div>
+                    <br><a href="https://discord.com/users/1301649715577749556" target="_blank" class="btn-link">Profile</a>
+                </div>
+                <div class="card">
+                    <h3 style="margin-top:10px;">MADIN</h3>
+                    <div class="rank-tag rank-cofounder">Co Founder</div>
+                    <br><a href="https://discord.com/users/984241144462462986" target="_blank" class="btn-link">Profile</a>
+                </div>
+                <div class="card">
+                    <h3 style="margin-top:10px;">SVELEOM</h3>
+                    <div class="rank-tag rank-manager">Manager</div>
+                    <br><a href="#" target="_blank" class="btn-link">Profile</a>
+                </div>
+                <div class="card">
+                    <h3 style="margin-top:10px;">SZ6V</h3>
+                    <div class="rank-tag rank-wasata">😹 واسطة</div>
+                    <br><a href="https://discord.com/users/1369783861285752872" target="_blank" class="btn-link">Profile</a>
                 </div>
             </div>
         </div>
@@ -221,15 +260,6 @@
                 <li><i class="fas fa-check-circle"></i> ٩- عـدم الـتـدخـل بـشـؤون الادارة و عـدم إزعـاجـهـم</li>
                 <li><i class="fas fa-check-circle"></i> ¹⁰- مـشـاكـل الـخـاص لـيـس لـديـنـا أي عـلاقـة فـيـهـا</li>
             </ul>
-        </div>
-
-        <div class="section" dir="ltr">
-            <h2><i class="fas fa-bullseye"></i> Community Goal</h2>
-            <div style="display: flex; justify-content: space-between; margin-top: 10px; font-weight: bold;">
-                <span style="color:white;">Current: 5,800</span>
-                <span style="color: var(--text-gold);">Goal: 10,000</span>
-            </div>
-            <div class="progress-bar-wrap"><div class="progress-fill"></div></div>
         </div>
 
         <div class="thanks-section">
