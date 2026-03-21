@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STR Community</title>
+<style>
+/* Reset */
+* {margin:0;padding:0;box-sizing:border-box;}
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(-45deg, #0d1117, #1a1f2b, #111827, #161b2e);
+    background-size: 400% 400%;
+    color: #fff;
+    animation: gradientBG 20s ease infinite;
+    overflow-x: hidden;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    min-height: 100vh;
+}
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+.center {text-align: center;}
+
+/* Fade-in Scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Logo */
+img.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    float: left;
+    margin-left: 20px;
+    border: 3px solid #ff3232;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+img.logo:hover {
+    transform: scale(1.3) rotate(20deg);
+    box-shadow: 0 25px 50px rgba(255,50,50,0.7);
+}
+
+/* Server Icon بجانب الاسم */
+.server-icon {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-left: 10px;
+    border-radius: 50%;
+    border: 2px solid #ff3232;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.server-icon:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 8px 25px rgba(255,50,50,0.6);
+}
+
+/* Headings */
+h1 {
+    font-size: 52px;
+    color: #ff3232;
+    letter-spacing: 2px;
+    margin: 20px 0;
+    transition: all 0.5s ease;
+}
+h1:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px #ff3232;
+}
+h2 {
+    font-size: 36px;
+    color: #ff3232;
+    margin: 30px 0 20px;
+    transition: all 0.5s ease;
+}
+h2:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 15px #ff3232;
+}
+
+/* Paragraphs */
+p {
+    line-height: 1.9;
+    color: #d0d7e0;
+    font-size: 17px;
+}
+
+/* Boxes */
+.box {
+    background: #151b2e;
+    border-radius: 25px;
+    padding: 35px 30px;
+    margin-top: 25px;
+    box-shadow: 8px 8px 25px rgba(0,0,0,0.5), -8px -8px 25px rgba(255,255,255,0.05);
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+.box::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,50,50,0.2), rgba(255,50,50,0));
+    top: -100%;
+    left: 0;
+    transition: all 0.7s ease;
+}
+.box:hover::after {
+    top: 0;
+}
+.box:hover {
+    transform: translateY(-12px);
+    box-shadow: 12px 12px 35px rgba(0,0,0,0.6), -12px -12px 35px rgba(255,50,50,0.2);
+}
+
+/* Links */
+a {
+    color: #ff3232;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin: 12px 0;
+    transition: all 0.4s ease;
+    position: relative;
+}
+a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #ff5959;
+    bottom: -2px;
+    left: 0;
+    transition: all 0.4s ease;
+}
+a:hover {
+    color: #ff5959;
+    transform: scale(1.08) translateX(5px);
+}
+a:hover::after {
+    width: 100%;
+}
+
+/* Admin Images */
+.admin-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-top: 10px;
+    border: 2px solid #ff3232;
+    box-shadow: 0 5px 15px rgba(255,50,50,0.4);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.admin-img:hover {
+    transform: scale(1.4) rotate(-5deg);
+    box-shadow: 0 15px 35px rgba(255,50,50,0.7);
+}
+
+/* Rules */
+.rules p {
+    margin: 10px 0;
+    font-size: 16px;
+    padding-left: 18px;
+    position: relative;
+}
+.rules p::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #ff3232;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
+</head>
+<body>
+
+<section>
+<div class="container clearfix fade-in">
+<img src="27cb0faccfbafe63dd4ea954dcc80513.webp" class="logo">
+<div class="center">
+<h1>
+  𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬
+  <img src="https://cdn.discordapp.com/icons/1331682748372488243/27cb0faccfbafe63dd4ea954dcc80513.webp?size=1024" class="server-icon">
+</h1>
+<p>
+سيرفر ستار هو سيرفر ديسكرود تتوفر فيه جميع وسائل الترفيه حيث تمنح لك فرصة لتعرف و تكوين صداقات من بلدان مختلفة وان تعيش معنا تجارب و قصص رائعة.
+<br><br>
+يختص سيرفرنا أيضاً في لعبة ماين كرافت هي لعبة عالم مفتوح تتيح للاعبين البناء، الاستكشاف، والبقاء على قيد الحياة في عالم مكوّن من مكعبات.
+</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container fade-in">
+<h2 class="center">Management 👑</h2>
+<div class="box">
+<p>
+<a href="https://discord.com/users/944053364323405914" target="_blank">Owner Ship : SANJI</a><br>
+<img src="https://cdn.discordapp.com/avatars/944053364323405914/73bc30883d61ed7bc6a000b9c3ca375d.webp?size=1024" class="admin-img">
+</p>
+<p>
+<a href="https://discord.com/users/1134505693861388338" target="_blank">Owner : BAKI</a><br>
+<img src="https://cdn.discordapp.com/avatars/1134505693861388338/f4a8d73d777cc5e1faf21d912a23efe0.webp?size=1024" class="admin-img">
+</p>
+<p>
+<a href="https://discord.com/users/1190396076222587002" target="_blank">CO OWNER : MUSTAFA</a><br>
+<img src="https://cdn.discordapp.com/avatars/1190396076222587002/faadabf1a6b0a9dfc7b1dd55ca55b0c9.webp?size=1024" class="admin-img">
+</p>
+<p>
+<a href="https://discord.com/users/1301649715577749556" target="_blank">CO OWNER : MAJED</a><br>
+<img src="https://cdn.discordapp.com/avatars/1301649715577749556/531ca8e0c8b77f92dcd077ebcc6807e8.webp?size=1024" class="admin-img">
+</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container center fade-in">
+<div class="box">
+<h2>Links Of Social 🌐</h2>
+<a href="https://discord.gg/str7" target="_blank">Discord</a>
+<a href="https://www.tiktok.com/@l3ei_7" target="_blank">TikTok</a>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container rules fade-in">
+<h2 class="center">قوانين السيرفر 📜</h2>
+<p>1- يجب إحترام الأعضاء / الإدارة 🤝</p>
+<p>2- السب والشتم ممنوع ❌</p>
+<p>3- ممنوع السياسة والطائفية 🚫</p>
+<p>4- ممنوع التبادل والطلبات 📦</p>
+<p>5- منع ذكر سيرفرات 🔇</p>
+<p>6- استخدام البوت في مكانه 🤖</p>
+<p>7- منع التلميح والايحاءات ⚠️</p>
+<p>8- منع نشر روابط 🔗</p>
+<p>9- عدم إزعاج الإدارة 🙏</p>
+<p>10- الخاص ليس مسؤوليتنا 💌</p>
+</div>
+</section>
+
+<section>
+<div class="container center fade-in">
+<h2>خريطة السيرفر 🗺️</h2>
+<div class="box">
+<a href="https://discord.com/channels/1331682748372488243/1331959881648967822">اخبار السيرفر</a>
+<a href="https://discord.com/channels/1331682748372488243/1331959147649826898">القوانين</a>
+<a href="https://discord.com/channels/1331682748372488243/1416180157051572314">الشات العام</a>
+<a href="https://discord.com/channels/1331682748372488243/1416213834359767182">اختر رتبك</a>
+<a href="https://discord.com/channels/1331682748372488243/1416213530037846128">الدعم الفني</a>
+<a href="https://discord.com/channels/1331682748372488243/1416214568291799163">الفعاليات</a>
+<a href="https://discord.com/channels/1331682748372488243/1416217109696086137">اخبار ماين كرافت</a>
+</div>
+</div>
+</section>
+
+<script>
+// Scroll fade-in effect
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>
