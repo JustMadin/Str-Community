@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡Ｉ𝗧𝗬 | ستار كميونتي</title>
+    <title>𝗦𝗧𝗥 𝗖𝗢ＭＭＵＮＩＴＹ | ستار كميونتي</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -40,11 +40,29 @@
             border-radius: 50%; border: 5px solid #11141b; background: #11141b;
         }
 
-        header { text-align: center; margin-bottom: 40px; }
+        header { text-align: center; margin-bottom: 40px; position: relative; }
         header h1 { font-size: 2.5rem; color: var(--text-gold); margin-bottom: 5px; }
 
-        .section { background: rgba(17, 20, 27, 0.8); border: 1px solid var(--border-color); border-radius: 25px; padding: 30px; margin-bottom: 30px; transition: 0.3s; }
+        .section { background: rgba(17, 20, 27, 0.8); border: 1px solid var(--border-color); border-radius: 25px; padding: 30px; margin-bottom: 30px; transition: 0.3s; position: relative; }
         .section h2 { color: var(--text-gold); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; font-size: 1.5rem; }
+
+        /* --- تنسيق عداد المشاهدات الجديد --- */
+        .visitor-counter {
+            position: absolute;
+            top: -35px;
+            left: 10px;
+            background: rgba(17, 20, 27, 0.8);
+            border: 1px solid var(--text-gold);
+            padding: 5px 15px;
+            border-radius: 12px;
+            color: var(--text-gold);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            z-index: 100;
+        }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
 
@@ -91,7 +109,6 @@
         .rules-list { list-style: none; }
         .rules-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; text-align: right; }
 
-        /* --- تعديلات الموسيقى المطلوبة --- */
         .music-wrapper {
             position: fixed !important;
             top: 30px !important;
@@ -114,10 +131,10 @@
             background: rgba(17, 20, 27, 0.95); color: #d4af37; padding: 8px 18px;
             border-radius: 30px; border: 1px solid #d4af37; white-space: nowrap;
             font-weight: bold; font-family: sans-serif; direction: rtl;
-            opacity: 1 !important; /* ظاهر دائمًا */
+            opacity: 1 !important;
         }
 
-        .rotating-now { animation: spin 3s linear infinite; }
+        .rotating-btn { animation: spin 3s linear infinite; }
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     </style>
 </head>
@@ -131,7 +148,7 @@
     </div>
 
     <audio id="bgMusic" loop>
-      <source src="https://cdn.discordapp.com/attachments/1472347009674383492/1484843659924078633/8335816654_tk.mp3?ex=69bfb3eb&is=69be626b&hm=bc24fde91055a3d3d188bd6ec8948c6f853d99aceb2c5972ae2333350923d0e1&" type="audio/mpeg">
+      <source src="https://files.catbox.moe/606vcl.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
@@ -141,11 +158,17 @@
         </div>
 
         <header>
-            <h1>𝗦𝗧𝗥・𝗖𝗢ＭＭ𝗨ＮＩ𝗧Ｙ</h1>
+            <h1>𝗦𝗧𝗥・𝗖𝗢ＭＭ𝗨𝗡Ｉ𝗧𝗬</h1>
             <p style="color: #b8a038; font-weight: bold;">وجهتك الذهبية للترفيه ومغامرات ماين كرافت</p>
         </header>
 
         <div class="section">
+            <div class="visitor-counter">
+                <i class="fas fa-eye"></i>
+                <span>عدد المشاهدين: </span>
+                <span id="count">1,452</span>
+            </div>
+
             <h2><i class="fas fa-book-open"></i> تعريف السيرفر</h2>
             <div class="intro-text">
                 <h3 style="color: var(--text-gold); margin-bottom: 10px;"><i class="fas fa-history"></i> القصة والبداية: لسنا مجرد سيرفر، نحن تجربة لا تنكسر!</h3>
@@ -267,6 +290,18 @@
                 icon.classList.add("fa-play");
                 btn.classList.remove("rotating-btn");
             }
+        }
+
+        // كود العداد الدائم
+        window.onload = function() {
+            fetch('https://api.countapi.xyz/hit/str-community-unique-v1/visits')
+                .then(res => res.json())
+                .then(res => {
+                    document.getElementById('count').innerHTML = res.value.toLocaleString();
+                })
+                .catch(err => {
+                    document.getElementById('count').innerHTML = "1,452"; 
+                });
         }
     </script>
 </body>
