@@ -119,6 +119,29 @@
 
         .rules-list { list-style: none; }
         .rules-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; text-align: right; }
+        /* تنسيق زر الموسيقى */
+.music-player-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    background: var(--card-bg);
+    border: 2px solid var(--text-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    transition: 0.3s;
+}
+
+.music-player-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--text-gold);
+}
     </style>
 </head>
 <body>
@@ -239,6 +262,37 @@
         <div style="text-align: center; padding: 40px; color: var(--text-gold);">
             <h2>شكراً لتواجدكم معنا 💛</h2>
         </div>
+</div> <audio id="bgMusic" loop>
+        <source src="https://cdn.discordapp.com/attachments/1472347009674383492/1484825095208828968/87fa0ea13f1923be.mp3?ex=69bfa2a1&is=69be5121&hm=024585ee9ad527824b434908532915cfe1d24381bf75ce4a1783cfc79fc76a9b&" type="audio/mpeg">
+    </audio>
+
+    <div class="music-player-btn" onclick="toggleMusic()">
+        <i id="musicIcon" class="fas fa-play" style="color: #d4af37; font-size: 1.2rem;"></i>
     </div>
-</body>
-</html>
+
+    <script>
+        function toggleMusic() {
+            var audio = document.getElementById("bgMusic");
+            var icon = document.getElementById("musicIcon");
+            if (audio.paused) {
+                audio.play();
+                icon.classList.remove("fa-play");
+                icon.classList.add("fa-pause");
+            } else {
+                audio.pause();
+                icon.classList.remove("fa-pause");
+                icon.classList.add("fa-play");
+            }
+        }
+    </script>
+
+</body> </html>
+
+---
+
+### بالمختصر، وش تسوي بالصورة اللي عندك؟
+1.  **احذف** سطر 243 (اللي فيه `</body>`).
+2.  **احذف** سطر 256 و 257.
+3.  حط الكود اللي أعطيتك اياه فوق **بالكامل** بعد سطر 242.
+
+**هل تبي أجمع لك الكود "كامل" بملف واحد وأعطيك إياه عشان تنسخه مرة واحدة وترتاح؟**
