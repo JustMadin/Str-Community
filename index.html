@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬 </title>
+    <title>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬 | القوانين الجديدة</title>
 
     <style>
         :root {
@@ -24,7 +24,7 @@
             font-family: "Segoe UI", Tahoma, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .container {
@@ -38,32 +38,26 @@
             margin-bottom: 50px;
         }
 
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        img.logo {
-            width: 120px;
-            height: 120px;
+        .logo-main {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 3px solid var(--gold);
-            box-shadow: 0 0 20px rgba(241, 196, 15, 0.2);
+            border: 4px solid var(--gold);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         h1 {
             color: var(--gold);
-            margin: 10px 0;
             font-size: 2.5rem;
-            text-shadow: 0 0 10px rgba(241, 196, 15, 0.3);
+            margin: 10px 0;
         }
 
         .subtitle {
             color: var(--muted);
-            max-width: 700px;
-            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
         }
 
         .section {
@@ -79,86 +73,88 @@
             color: var(--accent);
             border-bottom: 1px solid var(--border);
             padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 15px;
+            gap: 20px;
         }
 
         .card {
             background: #11141c;
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 15px;
-            transition: all 0.3s ease;
+            padding: 20px;
             text-align: center;
+            transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--gold);
-            box-shadow: 0 5px 15px rgba(241, 196, 15, 0.1);
-        }
-
-        .card h3 {
-            margin: 0 0 8px;
-            color: var(--gold);
         }
 
         .admin-img {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            margin-bottom: 10px;
-            border: 2px solid var(--gold);
+            border: 3px solid var(--gold);
+            margin-bottom: 15px;
         }
 
-        .card a {
-            color: #fff; 
-            background: rgba(241, 196, 15, 0.2);
-            padding: 5px 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
+        .btn-link {
             display: inline-block;
-            margin-top: 10px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin: 5px;
-            padding: 10px 25px;
+            margin-top: 15px;
+            padding: 8px 18px;
             border: 1px solid var(--gold);
             border-radius: 8px;
             color: var(--gold);
             text-decoration: none;
+            font-weight: bold;
             transition: 0.3s;
         }
 
-        .social-links a:hover {
+        .btn-link:hover {
             background: var(--gold);
             color: #000;
         }
 
-        .badge {
-            background: #3a2f00; 
+        .social-area a {
+            margin: 0 10px;
             color: var(--gold);
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            border: 1px solid var(--gold);
+            font-weight: bold;
         }
 
-        .rules-list { list-style: none; padding: 0; }
+        /* تنسيق قائمة القوانين الجديدة */
+        .rules-list {
+            list-style: none;
+            padding: 0;
+        }
 
-        .rules-list li { padding: 8px 0; }
+        .rules-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(241, 196, 15, 0.05);
+            font-size: 1.05rem;
+        }
 
-        .rules-list li::before {
-            content: "✦";
+        .note-box {
+            background: rgba(241, 196, 15, 0.1);
+            border-right: 4px solid var(--gold);
+            padding: 15px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .badge {
+            background: #3a2f00;
             color: var(--gold);
-            margin-left: 10px;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid var(--gold);
         }
     </style>
 </head>
@@ -167,43 +163,59 @@
     <div class="container">
         
         <header>
-            <div class="logo-container">
-                <img src="https://cdn.discordapp.com/icons/1331682748372488243/27cb0faccfbafe63dd4ea954dcc80513.webp?size=1024" class="logo">
-                <h1>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬</h1>
-            </div>
-            <p class="subtitle">سيرفر ستار هو وجهتك للترفيه وتكوين الصداقات وعيش تجارب ماين كرافت الفريدة.</p>
-            <div class="social-links">
-                <a href="https://discord.gg/str7" target="_blank">Discord</a>
-                <a href="https://www.tiktok.com/@l3ei_7" target="_blank">TikTok</a>
+            <img src="https://cdn.discordapp.com/icons/1331682748372488243/27cb0faccfbafe63dd4ea954dcc80513.webp?size=1024" class="logo-main">
+            <h1>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬</h1>
+            <p class="subtitle">سيرفر ستار هو وجهتك للترفيه وتكوين الصداقات وعيش تجارب فريدة.</p>
+            <div class="social-area">
+                <a href="https://discord.gg/str7" target="_blank">Discord 🌐</a>
+                <a href="https://www.tiktok.com/@l3ei_7" target="_blank">TikTok 📱</a>
             </div>
         </header>
 
         <div class="section">
-            <h2>👑 الإدارة العليا</h2>
+            <h2>👑 Management</h2>
             <div class="grid">
                 <div class="card">
                     <img src="https://cdn.discordapp.com/avatars/944053364323405914/73bc30883d61ed7bc6a000b9c3ca375d.webp?size=1024" class="admin-img">
                     <h3>SANJI</h3>
                     <span class="badge">Owner Ship</span>
-                    <br><a href="https://discord.com/users/944053364323405914" target="_blank">الملف الشخصي</a>
+                    <a href="https://discord.com/users/944053364323405914" target="_blank" class="btn-link">Profile</a>
                 </div>
                 <div class="card">
                     <img src="https://cdn.discordapp.com/avatars/1134505693861388338/f4a8d73d777cc5e1faf21d912a23efe0.webp?size=1024" class="admin-img">
                     <h3>BAKI</h3>
                     <span class="badge">Owner</span>
-                    <br><a href="https://discord.com/users/1134505693861388338" target="_blank">الملف الشخصي</a>
+                    <a href="https://discord.com/users/1134505693861388338" target="_blank" class="btn-link">Profile</a>
                 </div>
                 <div class="card">
                     <img src="https://cdn.discordapp.com/avatars/1190396076222587002/faadabf1a6b0a9dfc7b1dd55ca55b0c9.webp?size=1024" class="admin-img">
                     <h3>MUSTAFA</h3>
                     <span class="badge">CO OWNER</span>
-                    <br><a href="https://discord.com/users/1190396076222587002" target="_blank">الملف الشخصي</a>
+                    <a href="https://discord.com/users/1190396076222587002" target="_blank" class="btn-link">Profile</a>
                 </div>
                 <div class="card">
                     <img src="https://cdn.discordapp.com/avatars/1301649715577749556/531ca8e0c8b77f92dcd077ebcc6807e8.webp?size=1024" class="admin-img">
                     <h3>MAJED</h3>
                     <span class="badge">CO OWNER</span>
-                    <br><a href="https://discord.com/users/1301649715577749556" target="_blank">الملف الشخصي</a>
+                    <a href="https://discord.com/users/1301649715577749556" target="_blank" class="btn-link">Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🗺️ خريطة السيرفر</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>أخبار السيرفر</h3>
+                    <a href="https://discord.com/channels/1331682748372488243/1331959881648967822" target="_blank" class="btn-link">انتقال</a>
+                </div>
+                <div class="card">
+                    <h3>الشات العام</h3>
+                    <a href="https://discord.com/channels/1331682748372488243/1416180157051572314" target="_blank" class="btn-link">انتقال</a>
+                </div>
+                <div class="card">
+                    <h3>الدعم الفني</h3>
+                    <a href="https://discord.com/channels/1331682748372488243/1416213530037846128" target="_blank" class="btn-link">انتقال</a>
                 </div>
             </div>
         </div>
@@ -211,12 +223,20 @@
         <div class="section">
             <h2>📜 قوانين السيرفر</h2>
             <ul class="rules-list">
-                <li>إحترام الجميع هو القاعدة الأولى والأساسية 🤝</li>
-                <li>يمنع السب أو الإساءة بأي شكل من الأشكال ❌</li>
-                <li>الابتعاد التام عن المواضيع السياسية والطائفية 🚫</li>
-                <li>يمنع نشر الروابط الخارجية أو الإعلانات غير المصرحة 🔇</li>
-                <li>استخدام غرف البوتات في الأماكن المخصصة لها فقط 🤖</li>
+                <li>¹- يـجـب إحـتـرام الأعـضـاء / الإدارة و عـدم الإسـاءة لـهـم</li>
+                <li>²- الـسـب و الـشـتـم بـكـل أنـواعـه و سـبـام كـلام وراء بـعـض</li>
+                <li>³- عـدم الـتـحـدث عـن ( الـسـيـاسـة / الـطـوائـف / الـعـنـصـريـة ) قـد يـعـرضـك لـ الـطـرد</li>
+                <li>⁴- مـمـنـوع الـتـبـادل أو الـطـلـبـات مـثـل (رتـبـة / كـريـدت / سـيـرفـرات )</li>
+                <li>⁵- عـدم ذكـر أسـمـاء سـيـرفـرات حـتـى لـو كـان سـيـرفـر لـ يـوتـيـوبـر مـشـهـور</li>
+                <li>⁶- عـدم إسـتـخـدام أوامـر الـبـوتـات او كـلام الا بـالـشـات مـخـصـص لـهـا</li>
+                <li>⁷- عـدم الـتـلـمـيـح بـالـسـب و بـعـض الأيـمـوجـيـات و الـتـغـازل بـكـل أنـواعـه</li>
+                <li>⁸- عـدم إرسـال روابـط سـيـرفـرات فـي سـيـرفـرنـا أو بـالـخـاص الأعـضـاء بـانـد فـوري</li>
+                <li>⁹- عـدم الـتـدخـل بـشـؤون الادارة و عـدم إزعـاجـهـم بـالـمـنـشـن الـكـثـيـر</li>
+                <li>¹⁰- مـشـاكـل الـخـاص لـيـس لـديـنـا أي عـلاقـة فـيـهـا إلا اذا كـان نـشـر سـيـرفـرات</li>
             </ul>
+            <div class="note-box">
+                مـلاحـظـة : عـدم قـراءة قـوانـيـن الـسـيـرفـر لـيـس عـذر يـرجـى قـرائـتـهـا لـ تـجـنـب الـبـانـد.
+            </div>
         </div>
 
     </div>
