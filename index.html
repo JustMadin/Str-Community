@@ -1,289 +1,224 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STR Community Modern</title>
-<style>
-:root{
-  --bg:linear-gradient(135deg,#0b0c10,#1c1c1c,#2c2f33,#f5f5f5);
-  --card:#1f2230;
-  --border:#333850;
-  --text:#e6e6eb;
-  --muted:#a0a5b3;
-  --main:#ff3232;
-  --accent:#00d4ff;
-  --gold:#f1c40f;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬 </title>
 
-/* Reset */
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:"Segoe UI", Tahoma, sans-serif;
-  background:var(--bg);
-  background-size:400% 400%;
-  animation:gradientBG 25s ease infinite;
-  color:var(--text);
-  line-height:1.7;
-  overflow-x:hidden;
-}
+    <style>
+        :root {
+            --bg: #0f1117;
+            --card: #161a23;
+            --border: #2d2d10; 
+            --text: #f1c40f;   
+            --muted: #b8a038;  
+            --main: #f1c40f;   
+            --accent: #ffeb3b; 
+            --gold: #f1c40f;
+        }
 
-@keyframes gradientBG {
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
 
-/* Container */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:30px 20px;
-}
-.center{text-align:center;}
-.clearfix::after{content:""; clear:both; display:table;}
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
 
-/* Titles */
-h1{
-  text-align:center; 
-  color:var(--main); 
-  font-size:48px;
-  margin-bottom:10px;
-  text-shadow:0 0 20px rgba(255,50,50,0.7);
-}
-.subtitle{
-  text-align:center; 
-  color:var(--muted); 
-  margin-bottom:50px;
-  font-size:18px;
-}
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-/* Sections */
-h2{
-  color:var(--main);
-  margin-bottom:20px;
-  border-bottom:2px solid var(--border);
-  padding-bottom:10px;
-  position:relative;
-}
-h2::after{
-  content:"";
-  position:absolute;
-  left:0; bottom:0;
-  width:0;
-  height:3px;
-  background:var(--main);
-  animation:expand 1s forwards;
-}
-@keyframes expand{
-  to{width:100%;}
-}
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
 
-.section{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:25px;
-  margin-bottom:35px;
-  opacity:0;
-  transform:translateY(30px);
-  transition:all 0.8s ease, box-shadow 0.5s ease;
-}
-.section.visible{
-  opacity:1;
-  transform:translateY(0);
-  box-shadow:0 15px 35px rgba(255,50,50,0.3);
-}
+        img.logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 20px rgba(241, 196, 15, 0.2);
+        }
 
-/* Logo */
-img.logo{
-  width:150px; height:150px;
-  border-radius:50%;
-  object-fit:cover;
-  float:left;
-  margin-left:20px;
-  border:4px solid var(--main);
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  transition:transform 0.4s ease, box-shadow 0.4s ease;
-}
-img.logo:hover{
-  transform:scale(1.1) rotate(10deg);
-  box-shadow:0 20px 50px rgba(255,50,50,0.6);
-}
+        h1 {
+            color: var(--gold);
+            margin: 10px 0;
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px rgba(241, 196, 15, 0.3);
+        }
 
-/* Server Icon */
-.server-icon{
-  width:65px; height:65px;
-  vertical-align:middle;
-  margin-left:15px;
-  border-radius:50%;
-  border:3px solid var(--main);
-  transition:transform 0.5s ease, box-shadow 0.5s ease;
-}
-.server-icon:hover{
-  transform:scale(1.25);
-  box-shadow:0 15px 35px rgba(255,50,50,0.5);
-  animation:pulse 1.2s infinite;
-}
-@keyframes pulse{
-  0%,100%{transform:scale(1.25);}
-  50%{transform:scale(1.35);}
-}
+        .subtitle {
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
 
-/* Cards */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
-.card{
-  background:#11141c;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:20px;
-  transition:transform 0.35s ease, box-shadow 0.35s ease;
-}
-.card:hover{
-  transform:translateY(-10px) rotate(-2deg);
-  box-shadow:0 20px 40px rgba(255,50,50,0.5);
-}
-.card h3{margin:0 0 10px; color:var(--main);}
-.price{color:var(--gold); font-weight:bold;}
-.badge{background:#1e2440; color:#cfd2ff; padding:4px 10px; border-radius:6px; font-size:13px;}
-.rare{background:#3a2f00; color:#f1c40f;}
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
 
-/* Links */
-a{
-  color:var(--main);
-  text-decoration:none;
-  font-weight:600;
-  transition:all 0.3s ease;
-}
-a:hover{
-  color:#ff5959;
-  text-shadow:0 0 10px rgba(255,50,50,0.5);
-  transform:scale(1.05);
-}
+        .section h2 {
+            margin-top: 0;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
 
-/* Admin Images */
-.admin-img{
-  width:65px; height:65px;
-  border-radius:50%;
-  margin-top:15px;
-  border:3px solid var(--main);
-  transition:transform 0.4s ease, box-shadow 0.4s ease;
-}
-.admin-img:hover{
-  transform:scale(1.2) rotate(-3deg);
-  box-shadow:0 15px 35px rgba(255,50,50,0.4);
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
 
-/* Rules */
-.rules p{
-  margin:12px 0;
-  font-size:17px;
-}
-.rules p::before{
-  content:'•'; 
-  margin-left:12px; 
-  color:var(--main);
-}
-</style>
+        .card {
+            background: #11141c;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 5px 15px rgba(241, 196, 15, 0.1);
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            color: var(--gold);
+        }
+
+        .admin-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid var(--gold);
+        }
+
+        .card a {
+            color: #fff; 
+            background: rgba(241, 196, 15, 0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 25px;
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            color: var(--gold);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        .badge {
+            background: #3a2f00; 
+            color: var(--gold);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            border: 1px solid var(--gold);
+        }
+
+        .rules-list { list-style: none; padding: 0; }
+
+        .rules-list li { padding: 8px 0; }
+
+        .rules-list li::before {
+            content: "✦";
+            color: var(--gold);
+            margin-left: 10px;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="container">
+        
+        <header>
+            <div class="logo-container">
+                <img src="https://cdn.discordapp.com/icons/1331682748372488243/27cb0faccfbafe63dd4ea954dcc80513.webp?size=1024" class="logo">
+                <h1>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬</h1>
+            </div>
+            <p class="subtitle">سيرفر ستار هو وجهتك للترفيه وتكوين الصداقات وعيش تجارب ماين كرافت الفريدة.</p>
+            <div class="social-links">
+                <a href="https://discord.gg/str7" target="_blank">Discord</a>
+                <a href="https://www.tiktok.com/@l3ei_7" target="_blank">TikTok</a>
+            </div>
+        </header>
 
-<section>
-<div class="container clearfix">
-<img src="27cb0faccfbafe63dd4ea954dcc80513.webp" class="logo">
-<div class="center">
-<h1>𝗦𝗧𝗥・𝗖𝗢𝗠𝗠𝗨𝗡𝗜𝗧𝗬 <img src="https://cdn.discordapp.com/icons/1331682748372488243/27cb0faccfbafe63dd4ea954dcc80513.webp?size=1024" class="server-icon"></h1>
-<p class="subtitle">
-سيرفر ستار هو سيرفر ديسكرود تتوفر فيه جميع وسائل الترفيه حيث تمنح لك فرصة لتعرف و تكوين صداقات من بلدان مختلفة وان تعيش معنا تجارب و قصص رائعة.<br><br>
-يختص سيرفرنا أيضاً في لعبة ماين كرافت هي لعبة عالم مفتوح تتيح للاعبين البناء، الاستكشاف، والبقاء على قيد الحياة في عالم مكوّن من مكعبات.
-</p>
-</div>
-</div>
-</section>
+        <div class="section">
+            <h2>👑 الإدارة العليا</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://cdn.discordapp.com/avatars/944053364323405914/73bc30883d61ed7bc6a000b9c3ca375d.webp?size=1024" class="admin-img">
+                    <h3>SANJI</h3>
+                    <span class="badge">Owner Ship</span>
+                    <br><a href="https://discord.com/users/944053364323405914" target="_blank">الملف الشخصي</a>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.discordapp.com/avatars/1134505693861388338/f4a8d73d777cc5e1faf21d912a23efe0.webp?size=1024" class="admin-img">
+                    <h3>BAKI</h3>
+                    <span class="badge">Owner</span>
+                    <br><a href="https://discord.com/users/1134505693861388338" target="_blank">الملف الشخصي</a>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.discordapp.com/avatars/1190396076222587002/faadabf1a6b0a9dfc7b1dd55ca55b0c9.webp?size=1024" class="admin-img">
+                    <h3>MUSTAFA</h3>
+                    <span class="badge">CO OWNER</span>
+                    <br><a href="https://discord.com/users/1190396076222587002" target="_blank">الملف الشخصي</a>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.discordapp.com/avatars/1301649715577749556/531ca8e0c8b77f92dcd077ebcc6807e8.webp?size=1024" class="admin-img">
+                    <h3>MAJED</h3>
+                    <span class="badge">CO OWNER</span>
+                    <br><a href="https://discord.com/users/1301649715577749556" target="_blank">الملف الشخصي</a>
+                </div>
+            </div>
+        </div>
 
-<section>
-<div class="container center">
-<h2>Management 👑</h2>
-<div class="grid">
-<div class="card">
-<a href="https://discord.com/users/944053364323405914" target="_blank">Owner Ship : SANJI</a>
-<img src="https://cdn.discordapp.com/avatars/944053364323405914/73bc30883d61ed7bc6a000b9c3ca375d.webp?size=1024" class="admin-img">
-</div>
-<div class="card">
-<a href="https://discord.com/users/1134505693861388338" target="_blank">Owner : BAKI</a>
-<img src="https://cdn.discordapp.com/avatars/1134505693861388338/f4a8d73d777cc5e1faf21d912a23efe0.webp?size=1024" class="admin-img">
-</div>
-<div class="card">
-<a href="https://discord.com/users/1190396076222587002" target="_blank">CO OWNER : MUSTAFA</a>
-<img src="https://cdn.discordapp.com/avatars/1190396076222587002/faadabf1a6b0a9dfc7b1dd55ca55b0c9.webp?size=1024" class="admin-img">
-</div>
-<div class="card">
-<a href="https://discord.com/users/1301649715577749556" target="_blank">CO OWNER : MAJED</a>
-<img src="https://cdn.discordapp.com/avatars/1301649715577749556/531ca8e0c8b77f92dcd077ebcc6807e8.webp?size=1024" class="admin-img">
-</div>
-</div>
-</div>
-</section>
+        <div class="section">
+            <h2>📜 قوانين السيرفر</h2>
+            <ul class="rules-list">
+                <li>إحترام الجميع هو القاعدة الأولى والأساسية 🤝</li>
+                <li>يمنع السب أو الإساءة بأي شكل من الأشكال ❌</li>
+                <li>الابتعاد التام عن المواضيع السياسية والطائفية 🚫</li>
+                <li>يمنع نشر الروابط الخارجية أو الإعلانات غير المصرحة 🔇</li>
+                <li>استخدام غرف البوتات في الأماكن المخصصة لها فقط 🤖</li>
+            </ul>
+        </div>
 
-<section>
-<div class="container center">
-<div class="card">
-<h2>Links Of Social 🌐</h2>
-<a href="https://discord.gg/str7" target="_blank">Discord</a>
-<a href="https://www.tiktok.com/@l3ei_7" target="_blank">TikTok</a>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container rules">
-<h2 class="center">قوانين السيرفر 📜</h2>
-<p>1- يجب إحترام الأعضاء / الإدارة 🤝</p>
-<p>2- السب والشتم ممنوع ❌</p>
-<p>3- ممنوع السياسة والطائفية 🚫</p>
-<p>4- ممنوع التبادل والطلبات 📦</p>
-<p>5- منع ذكر سيرفرات 🔇</p>
-<p>6- استخدام البوت في مكانه 🤖</p>
-<p>7- منع التلميح والايحاءات ⚠️</p>
-<p>8- منع نشر روابط 🔗</p>
-<p>9- عدم إزعاج الإدارة 🙏</p>
-<p>10- الخاص ليس مسؤوليتنا 💌</p>
-</div>
-</section>
-
-<section>
-<div class="container center">
-<h2>خريطة السيرفر 🗺️</h2>
-<div class="grid">
-<a href="https://discord.com/channels/1331682748372488243/1331959881648967822" class="card">اخبار السيرفر</a>
-<a href="https://discord.com/channels/1331682748372488243/1331959147649826898" class="card">القوانين</a>
-<a href="https://discord.com/channels/1331682748372488243/1416180157051572314" class="card">الشات العام</a>
-<a href="https://discord.com/channels/1331682748372488243/1416213834359767182" class="card">اختر رتبك</a>
-<a href="https://discord.com/channels/1331682748372488243/1416213530037846128" class="card">الدعم الفني</a>
-<a href="https://discord.com/channels/1331682748372488243/1416214568291799163" class="card">الفعاليات</a>
-<a href="https://discord.com/channels/1331682748372488243/1416217109696086137" class="card">اخبار ماين كرافت</a>
-</div>
-</div>
-</section>
-
-<script>
-const sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', checkSections);
-function checkSections(){
-  const triggerBottom = window.innerHeight * 0.85;
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    if(sectionTop < triggerBottom){
-      section.classList.add('visible');
-    }
-  });
-}
-</script>
-
+    </div>
 </body>
 </html>
