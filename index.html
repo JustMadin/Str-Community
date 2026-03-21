@@ -24,8 +24,10 @@ body{
   color:var(--text);
   line-height:1.7;
 }
+
 .container{max-width:1100px; margin:auto; padding:30px 20px;}
 .center{text-align:center;}
+.clearfix::after{content:""; clear:both; display:table;}
 
 h1{text-align:center; color:var(--main); margin-bottom:10px;}
 .subtitle{text-align:center; color:var(--muted); margin-bottom:40px;}
@@ -37,20 +39,9 @@ h2{color:var(--main); margin-bottom:20px; border-bottom:1px solid var(--border);
   border-radius:14px;
   padding:20px;
   margin-bottom:30px;
-}
-
-.box{
-  background:#11141c;
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:15px;
-  margin-top:15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.box:hover{
-  transform: translateY(-5px);
-  box-shadow:0 10px 25px rgba(255,50,50,0.3);
-}
+.section:hover{transform:translateY(-5px); box-shadow:0 10px 25px rgba(255,50,50,0.3);}
 
 img.logo{
   width:150px; height:150px;
@@ -89,10 +80,9 @@ a:hover{color:#ff5959; transform:scale(1.05);}
 .rules p{margin:10px 0; font-size:16px;}
 .rules p::before{content:'•'; margin-left:10px; color:var(--main);}
 
-.clearfix::after{content:""; clear:both; display:table;}
-
 .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:15px;}
-.card{background:#11141c; border:1px solid var(--border); border-radius:12px; padding:15px;}
+.card{background:#11141c; border:1px solid var(--border); border-radius:12px; padding:15px; transition:transform 0.3s ease, box-shadow 0.3s ease;}
+.card:hover{transform:translateY(-5px); box-shadow:0 10px 25px rgba(255,50,50,0.3);}
 .card h3{margin:0 0 8px; color:var(--main);}
 .price{color:var(--gold); font-weight:bold;}
 .badge{background:#1e2440; color:#cfd2ff; padding:3px 8px; border-radius:6px; font-size:12px;}
