@@ -24,7 +24,8 @@
             color: var(--text-white); 
             background-attachment: fixed; 
             line-height: 1.6; 
-            perspective: 1200px; 
+            /* منظور عام لتأثيرات الـ 3D */
+            perspective: 1500px; 
         }
 
         .container { max-width: 1100px; margin: auto; padding: 20px; }
@@ -44,29 +45,52 @@
         header { text-align: center; margin-bottom: 40px; }
         header h1 { font-size: 2.5rem; color: var(--text-gold); margin-bottom: 5px; }
 
-        /* --- الأقسام --- */
-        .section { background: rgba(17, 20, 27, 0.8); border: 1px solid var(--border-color); border-radius: 25px; padding: 30px; margin-bottom: 30px; }
+        /* --- الأقسام العادية --- */
+        .section { background: rgba(17, 20, 27, 0.8); border: 1px solid var(--border-color); border-radius: 25px; padding: 30px; margin-bottom: 30px; transition: 0.3s; }
         .section h2 { color: var(--text-gold); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; font-size: 1.5rem; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
 
-        /* --- البطاقات --- */
-        .card { 
+        /* --- البطاقات وتأثير التوهج الذهبي --- */
+        .card, .rules-list li { 
             background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 15px; 
-            padding: 20px; text-align: center; transition: 0.4s ease; text-decoration: none; color: white; display: block;
+            padding: 20px; text-align: center; transition: all 0.4s ease; text-decoration: none; color: white; display: block;
         }
-        .card:hover { border-color: var(--text-gold); transform: translateY(-5px); }
-
-        /* --- قسم الهدف 3D --- */
-        .goal-section { 
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            transform-style: preserve-3d;
-            border: 2px solid var(--border-color);
-        }
-        .goal-section:hover { 
-            transform: translateZ(100px) rotateX(5deg); 
-            box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 30px rgba(212, 175, 55, 0.3);
+        .card:hover, .rules-list li:hover {
             border-color: var(--text-gold);
+            transform: translateY(-5px);
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.05) 0%, transparent 100%);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+        }
+
+        /* --- 🔥 شريط الأهداف 3D INTERACTIVE (الجديد) 🔥 --- */
+        .progress-bar-wrap { 
+            width: 100%; height: 32px; background: var(--progress-bg); border-radius: 50px; 
+            overflow: hidden; margin-top: 15px; border: 2px solid var(--border-color); 
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease; 
+            /* تفعيل تأثير الـ 3D على نفس الشريط */
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        /* تأثير الـ 3D والبروز فقط عند مرور الماوس على الشريط نفسه */
+        .progress-bar-wrap:hover { 
+            transform: translateZ(50px) rotateX(2deg); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6), 0 0 25px rgba(212, 175, 55, 0.2); 
+            border-color: var(--text-gold);
+        }
+
+        .progress-fill { 
+            height: 100%; width: 58%; 
+            background: linear-gradient(90deg, #b8860b, #d4af37, #f39c12); 
+            box-shadow: 0 0 10px var(--text-gold);
+            transition: all 0.4s ease;
+        }
+
+        /* زيادة بريق الشريط عند التأشير */
+        .progress-bar-wrap:hover .progress-fill {
+            background: linear-gradient(90deg, #d4af37, #f39c12, #fff); 
+            box-shadow: 0 0 20px var(--text-gold);
         }
 
         /* --- الرتب --- */
@@ -78,21 +102,15 @@
         .rank-sevelom { color: #ffc103; border-color: #ffc103; background: rgba(255,193,3,0.1); }
         .rank-sz6v { color: #fff; border-color: #fff; background: rgba(255,255,255,0.1); }
 
-        /* --- السوشل ميديا --- */
+        /* --- أزرار التواصل --- */
         .social-btn { text-decoration: none; padding: 15px; border-radius: 15px; font-weight: bold; display: flex; align-items: center; gap: 10px; justify-content: center; border: 2px solid; transition: 0.3s; }
         .discord-btn { border-color: #5865F2; color: #5865F2; }
-        .discord-btn:hover { background: #5865F2; color: white; box-shadow: 0 0 20px #5865F2; }
+        .discord-btn:hover { background: #5865F2; color: white; box-shadow: 0 0 15px #5865F2; }
         .tiktok-btn { border-color: #fff; color: #fff; }
-        .tiktok-btn:hover { background: #fff; color: #000; box-shadow: 0 0 20px #fff; }
+        .tiktok-btn:hover { background: #fff; color: #000; box-shadow: 0 0 15px #fff; }
 
-        /* --- شريط الأهداف --- */
-        .progress-bar-wrap { width: 100%; height: 25px; background: #222; border-radius: 50px; overflow: hidden; margin-top: 15px; border: 1px solid #333; }
-        .progress-fill { height: 100%; width: 58%; background: linear-gradient(90deg, #b8860b, #d4af37, #f39c12); box-shadow: 0 0 15px var(--text-gold); }
-
-        /* --- القوانين --- */
         .rules-list { list-style: none; }
-        .rules-list li { display: flex; align-items: center; gap: 12px; padding: 12px; border-bottom: 1px solid rgba(212, 175, 55, 0.1); transition: 0.3s; cursor: default; }
-        .rules-list li:hover { background: rgba(212, 175, 55, 0.05); padding-right: 20px; color: var(--text-gold); }
+        .rules-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; text-align: right; }
     </style>
 </head>
 <body>
@@ -167,24 +185,25 @@
                 <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ٦- عـدم إسـتـخـدام أوامـر الـبـوتـات الا بـالـشـات مـخـصـص لـهـا</li>
                 <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ٧- عـدم الـتـلـمـيـح بـالـسـب و الـتـغـازل بـكـل أنـواعـه</li>
                 <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ٨- عـدم إرسـال روابـط سـيـرفـرات فـي سـيـرفـرنـا أو بـالـخـاص</li>
-                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ٩- عـدم الـتـدخـل بـشـؤون الادارة و عـدم إزعـاجـهـم</li>
+                <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ⁹- عـدم الـتـدخـل بـشـؤون الادارة و عـدم إزعـاجـهـم</li>
                 <li><i class="fas fa-circle-check" style="color:var(--text-gold)"></i> ¹⁰- مـشـاكـل الـخـاص لـيـس لـديـنـا أي عـلاقـة فـيـهـا</li>
             </ul>
         </div>
 
-        <div class="section goal-section" dir="ltr">
+        <div class="section" dir="ltr">
             <h2><i class="fas fa-bullseye"></i> Community Goal</h2>
-            <div style="display: flex; justify-content: space-between; font-weight: bold; font-family: sans-serif; font-size: 1.1rem;">
+            <div style="display: flex; justify-content: space-between; font-weight: bold; font-family: sans-serif;">
                 <span>5,800 Members</span>
                 <span style="color: var(--text-gold);">10,000 Target</span>
             </div>
-            <div class="progress-bar-wrap"><div class="progress-fill"></div></div>
-            <p style="text-align: center; color: var(--text-gold); margin-top: 15px; font-weight: bold; font-size: 1.2rem;">58% Completed</p>
+            <div class="progress-bar-wrap">
+                <div class="progress-fill"></div>
+            </div>
+            <p style="text-align: center; color: var(--text-gold); margin-top: 15px; font-weight: bold;">58% Completed</p>
         </div>
 
-        <div style="text-align: center; padding-bottom: 50px;">
-            <h2 style="color: var(--text-gold);">شكراً لتواجدكم معنا 💛</h2>
-            <p>إدارة STR COMMUNITY تتمنى لكم وقتاً ممتعاً</p>
+        <div style="text-align: center; padding: 40px; color: var(--text-gold);">
+            <h2>شكراً لتواجدكم معنا 💛</h2>
         </div>
     </div>
 </body>
